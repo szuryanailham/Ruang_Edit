@@ -58,7 +58,7 @@ const NavBox = () => {
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-BaseColor">
                     {/* LOGO NAVBAR */}
                     <a
-                        href="https://flowbite.com/"
+                        href=""
                         className="flex items-center rtl:space-x-reverse"
                     >
                         <img
@@ -76,7 +76,7 @@ const NavBox = () => {
                     <button
                         type="button"
                         onClick={changeActive}
-                        className="inline-flex items-center w-12 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                        className="inline-flex items-center w-12 h-10 justify-center text-sm text-gray-300 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                         aria-controls="navbar-default"
                         aria-expanded="false"
                     >
@@ -182,7 +182,7 @@ const NavBox = () => {
                         <ElemntSidebar text={"About"} />
                         <li className="ml-3">
                             {/* Sign in */}
-                            <Button className="bg-transparent text-xl font-bold">
+                            <Button className="bg-transparent text-md font-bold">
                                 Login
                             </Button>
                         </li>
