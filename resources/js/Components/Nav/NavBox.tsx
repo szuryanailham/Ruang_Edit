@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { IoIosClose } from "react-icons/io";
+import { Button } from "@/Components/shadcn/ui/button";
 import {
     Accordion,
     AccordionContent,
@@ -11,6 +12,7 @@ const NavBox = () => {
     const [active, setActive] = useState<boolean>(false);
     const navbar = useRef<HTMLDivElement>(null);
     const sidebar = useRef<HTMLDivElement>(null);
+    const closeButton = useRef<HTMLButtonElement>(null);
     const changeActive = () => {
         setActive((current) => !current);
     };
@@ -141,14 +143,16 @@ const NavBox = () => {
                 ref={sidebar}
                 id="drawer-navigation"
                 className={`fixed inset-y-0 ${
-                    active ? "inset-x-[60%]" : "inset-x-0"
+                    active ? "translate-x-0" : "inset-x-0"
                 } z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-BaseColor rounded-sm`}
                 aria-labelledby="drawer-navigation-label"
             >
                 <button
                     type="button"
+                    onClick={() => setActive(false)}
                     data-drawer-hide="drawer-navigation"
                     aria-controls="drawer-navigation"
+                    ref={closeButton}
                     className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center"
                 >
                     <IoIosClose className="text-2xl" />
@@ -176,9 +180,16 @@ const NavBox = () => {
                         <ElemntSidebar text={"Wabiner"} />
                         {/* About */}
                         <ElemntSidebar text={"About"} />
-                        {/* Sign in */}
-
-                        {/* Sign Up */}
+                        <li className="ml-3">
+                            {/* Sign in */}
+                            <Button className="bg-transparent text-xl font-bold">
+                                Login
+                            </Button>
+                        </li>
+                        <li className="ml-3">
+                            {/* Sign Up */}
+                            <Button variant="outline">Sign Up</Button>
+                        </li>
                     </ul>
                 </div>
             </div>
