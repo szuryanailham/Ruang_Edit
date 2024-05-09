@@ -1,8 +1,8 @@
 import React from "react";
 import { title, secondText, benefitRuangEdit } from "./Text";
-import { Button } from "../shadcn/ui/button";
+import { Button } from "../../shadcn/ui/button";
 import { FaCirclePlay, FaRegBookmark } from "react-icons/fa6";
-const Header = () => {
+const Header: React.FC = () => {
     interface Benefit {
         img: string;
         title: string;
@@ -21,7 +21,7 @@ const Header = () => {
             </div>
             {/* TITLE  HEADDER  */}
             <div className="mt-3 p-1 w-[95%]">
-                <h1 className="text-4xl font-bold text-wrap p-2 text-colorFont leading-9">
+                <h1 className="text-4xl font-bold text-wrap p-2 text-colorFont leading-10">
                     {title()}
                 </h1>
                 <p className="p-1 mt-1"> {secondText()}</p>
@@ -98,7 +98,7 @@ const Header = () => {
                         <span className="text-BaseColor"> Benefit</span> from
                         our online learning
                     </h1>
-                    <div className="mt-7">
+                    <div className="mt-7 text-colorFont">
                         {benefitRuangEdit().map(
                             (element: Benefit, index: number) => (
                                 <div
@@ -111,7 +111,7 @@ const Header = () => {
                                         <h1 className="font-bold text-2xl">
                                             {element.title}
                                         </h1>
-                                        <p className="leading-1 text-wrap">
+                                        <p className="leading-1 text-wrap text-sm">
                                             {element.deskripsi}
                                         </p>
                                     </div>

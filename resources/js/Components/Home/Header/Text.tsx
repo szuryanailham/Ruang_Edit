@@ -10,7 +10,7 @@ export const benefitRuangEdit = () => {
     const dataBenefit = [
         {
             img: "/img/Toga_icon.svg",
-            title: "online degree",
+            title: "Online degree",
             deskripsi:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
         },
@@ -28,7 +28,7 @@ export const benefitRuangEdit = () => {
         },
         {
             img: "/img/playlist_icon.svg",
-            title: "Building Community",
+            title: "Playlist Course",
             deskripsi:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
         },

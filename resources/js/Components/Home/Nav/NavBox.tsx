@@ -8,7 +8,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/Components/shadcn/ui/accordion";
-const NavBox = () => {
+const NavBox: React.FC = () => {
     const [active, setActive] = useState<boolean>(false);
     const navbar = useRef<HTMLDivElement>(null);
     const sidebar = useRef<HTMLDivElement>(null);
