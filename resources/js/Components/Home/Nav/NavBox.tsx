@@ -142,7 +142,7 @@ const NavBox: React.FC = () => {
             <div
                 ref={sidebar}
                 id="drawer-navigation"
-                className={`fixed inset-y-0 ${
+                className={`fixed -inset-y-1 ${
                     active ? "translate-x-0" : "inset-x-0"
                 } z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-BaseColor rounded-sm`}
                 aria-labelledby="drawer-navigation-label"

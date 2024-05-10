@@ -1,0 +1,82 @@
+import InputCourse from "@/Components/Course/InputCourse";
+import NavBox from "@/Components/Home/Nav/NavBox";
+import CardCourse from "@/Components/Home/PopularCourse/CardCourse";
+import React from "react";
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
+} from "@/Components/shadcn/ui/pagination";
+import Footer from "@/Components/Home/Footer/Footer";
+NavBox;
+const CoursePage: React.FC = () => {
+    return (
+        <>
+            <NavBox />
+            <section className=" h-fit w-full p-5">
+                <InputCourse />
+                <div className="mt-7 flex flex-col items-center">
+                    {/* card 1 */}
+                    <CardCourse
+                        image="/img/card_course_img.svg"
+                        category="design"
+                        title="Class Videografer with CapCut"
+                        rating={4.5}
+                        course={7}
+                        member={50}
+                    />
+                    {/* end card 1 */}
+
+                    {/* card 2 */}
+                    <CardCourse
+                        image="/img/card_course_img2.svg"
+                        category="design"
+                        title="Class Grading with Lightroom"
+                        rating={4.5}
+                        course={7}
+                        member={50}
+                    />
+                    {/* end card 2 */}
+                </div>
+                {/* pagination */}
+                <Pagination className="p-3">
+                    <PaginationContent>
+                        <PaginationItem>
+                            <PaginationPrevious
+                                className="bg-BaseColor text-white hover:bg-white"
+                                href="#"
+                            />
+                        </PaginationItem>
+                        <PaginationItem>
+                            <PaginationLink href="#">1</PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                            <PaginationLink href="#" isActive>
+                                2
+                            </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                            <PaginationLink href="#">3</PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                            <PaginationEllipsis />
+                        </PaginationItem>
+                        <PaginationItem>
+                            <PaginationNext
+                                className="bg-BaseColor text-white"
+                                href="#"
+                            />
+                        </PaginationItem>
+                    </PaginationContent>
+                </Pagination>
+            </section>
+            <Footer />
+        </>
+    );
+};
+
+export default CoursePage;

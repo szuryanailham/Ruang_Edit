@@ -9,14 +9,11 @@ import {
 } from "react-icons/fa";
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-white">
+        <footer className="bg-BaseColor text-white">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
-                        <a
-                            href="https://flowbite.com/"
-                            className="flex items-center"
-                        >
+                        <a href="" className="flex items-center">
                             <img
                                 src="/img/Logo.svg"
                                 className="h-8 me-3"
@@ -29,10 +26,10 @@ const Footer: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">
+                            <h2 className="mb-6 text-sm font-semibold text-white uppercase ">
                                 Resources
                             </h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul className="text-gray-300  font-medium">
                                 <li className="mb-4">
                                     <Link href="/" className="hover:underline">
                                         Ruang Edit
@@ -46,10 +43,10 @@ const Footer: React.FC = () => {
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
+                            <h2 className="mb-6 text-sm font-semibold text-white uppercase">
                                 Follow us
                             </h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul className="text-gray-300 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
                                     <Link href="/" className="hover:underline ">
                                         Instagram
@@ -63,10 +60,10 @@ const Footer: React.FC = () => {
                             </ul>
                         </div>
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
+                            <h2 className="mb-6 text-sm font-semibold text-white uppercase">
                                 Legal
                             </h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul className="text-gray-300dark:text-gray-400 font-medium">
                                 <li className="mb-4">
                                     <Link href="#" className="hover:underline">
                                         Privacy Policy
@@ -83,7 +80,7 @@ const Footer: React.FC = () => {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <span className="text-sm text-gray-500 sm:text-center">
+                    <span className="text-sm text-gray-300 sm:text-center">
                         © 2024{" "}
                         <Link
                             href="https://flowbite.com/"
@@ -96,35 +93,35 @@ const Footer: React.FC = () => {
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <Link
                             href="#"
-                            className="text-gray-500 hover:text-gray-900"
+                            className="text-gray-300hover:text-gray-900"
                         >
                             <FaFacebookF />
                             <span className="sr-only">Facebook page</span>
                         </Link>
                         <Link
                             href="#"
-                            className="text-gray-500 hover:text-gray-900"
+                            className="text-gray-300 hover:text-gray-900"
                         >
                             <FaDiscord />
                             <span className="sr-only">Discord community</span>
                         </Link>
                         <Link
                             href="#"
-                            className="text-gray-500 hover:text-gray-900  ms-5"
+                            className="text-gray-300 hover:text-gray-900  ms-5"
                         >
                             <FaTwitter />
                             <span className="sr-only">Twitter page</span>
                         </Link>
                         <Link
                             href="#"
-                            className="text-gray-500 hover:text-gray-900 ms-5"
+                            className="text-gray-300 hover:text-gray-900 ms-5"
                         >
                             <FaTiktok />
                             <span className="sr-only">Tiktok account</span>
                         </Link>
                         <a
                             href="#"
-                            className="text-gray-500 hover:text-gray-900 ms-5"
+                            className="text-gray-300 hover:text-gray-900 ms-5"
                         >
                             <FaInstagram />
                             <span className="sr-only">Instagram Account</span>

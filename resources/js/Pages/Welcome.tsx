@@ -14,7 +14,7 @@ export default function Welcome({
 }: PageProps<{ laravelVersion: string; phpVersion: string }>) {
     return (
         <>
-            <Head title="Welcome Ruang Edit" />
+            <Head title="HomePage" />
             {/* Navbar Component */}
             <Navbar />
             {/* Header Home page */}
