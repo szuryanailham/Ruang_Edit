@@ -15,8 +15,12 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
         return Inertia::render('MentorPage');
     });
 
-    Route::get('/course', function () {
+    Route::get('/class', function () {
         return Inertia::render('CoursePage');
+    });
+
+    Route::get('/events', function () {
+        return Inertia::render('EventPage');
     });
 });
 ?>

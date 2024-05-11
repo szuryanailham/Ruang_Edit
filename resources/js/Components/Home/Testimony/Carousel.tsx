@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 import CardTestimony from "./CardTestimony";
 import Autoplay from "embla-carousel-autoplay";
 import {

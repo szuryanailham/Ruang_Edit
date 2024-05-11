@@ -8,6 +8,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/Components/shadcn/ui/accordion";
+import { Link } from "@inertiajs/react";
 const NavBox: React.FC = () => {
     const [active, setActive] = useState<boolean>(false);
     const navbar = useRef<HTMLDivElement>(null);
@@ -29,15 +30,15 @@ const NavBox: React.FC = () => {
         }
     };
 
-    const ElemntSidebar = ({ text }: { text: String }) => {
+    const ElemntSidebar = ({ text, url }: { text: string; url: string }) => {
         return (
             <li>
-                <a
-                    href="#"
+                <Link
+                    href={url}
                     className="flex items-center p-2 text-white rounded-lg hover:bg-gray-100 hover:text-black group"
                 >
                     <span className="ms-4 font">{text}</span>
-                </a>
+                </Link>
             </li>
         );
     };
@@ -57,8 +58,8 @@ const NavBox: React.FC = () => {
             >
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-BaseColor">
                     {/* LOGO NAVBAR */}
-                    <a
-                        href=""
+                    <Link
+                        href="/"
                         className="flex items-center rtl:space-x-reverse"
                     >
                         <img
@@ -69,7 +70,7 @@ const NavBox: React.FC = () => {
                         <span className="text-xs font-semibold whitespace-nowrap text-wrap text-white leading-4 w-10">
                             Ruang Edit
                         </span>
-                    </a>
+                    </Link>
                     {/* LOGO NAVBAR */}
 
                     {/* BUTTON RESPONSIVE NAVBAR */}
@@ -93,21 +94,21 @@ const NavBox: React.FC = () => {
                     >
                         <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/"
                                     className="block py-2 px-3 text-white  rounded md:bg-transparent 0 md:p-0"
                                     aria-current="page"
                                 >
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="#"
                                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     About
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a
@@ -118,20 +119,20 @@ const NavBox: React.FC = () => {
                                 </a>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="#"
                                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Pricing
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="#"
                                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Contact
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -161,25 +162,31 @@ const NavBox: React.FC = () => {
                 <div className="py-4 overflow-y-auto mt-5">
                     <ul className="space-y-4 font-medium mt-5">
                         {/* home */}
-                        <ElemntSidebar text={"Home"} />
+                        <ElemntSidebar url={"/"} text={"Home"} />
                         {/* Course */}
                         <Accordion type="single" collapsible>
                             <AccordionItem value="item-1">
                                 <AccordionTrigger>
-                                    <ElemntSidebar text={"Course"} />
+                                    <ElemntSidebar url={""} text={"Course"} />
                                 </AccordionTrigger>
                                 <AccordionContent>
-                                    <ElemntSidebar text={"Class"} />
-                                    <ElemntSidebar text={"Mentor"} />
+                                    <ElemntSidebar
+                                        url={"/class"}
+                                        text={"Class"}
+                                    />
+                                    <ElemntSidebar
+                                        url={"/mentor"}
+                                        text={"Mentor"}
+                                    />
                                 </AccordionContent>
                             </AccordionItem>
                         </Accordion>
                         {/* event */}
-                        <ElemntSidebar text={"Event"} />
+                        <ElemntSidebar url={"/events"} text={"Event"} />
                         {/* wabiner */}
-                        <ElemntSidebar text={"Wabiner"} />
+                        <ElemntSidebar url={"wabiner"} text={"Wabiner"} />
                         {/* About */}
-                        <ElemntSidebar text={"About"} />
+                        <ElemntSidebar url={"about"} text={"About"} />
                         <li className="ml-3">
                             {/* Sign in */}
                             <Button className="bg-transparent text-md font-bold">
