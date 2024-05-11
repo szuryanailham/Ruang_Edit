@@ -22,5 +22,9 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
     Route::get('/events', function () {
         return Inertia::render('EventPage');
     });
+
+    Route::get('/wabiner', function () {
+        return Inertia::render('WabinerPage');
+    });
 });
 ?>

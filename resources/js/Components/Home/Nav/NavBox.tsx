@@ -184,7 +184,7 @@ const NavBox: React.FC = () => {
                         {/* event */}
                         <ElemntSidebar url={"/events"} text={"Event"} />
                         {/* wabiner */}
-                        <ElemntSidebar url={"wabiner"} text={"Wabiner"} />
+                        <ElemntSidebar url={"/wabiner"} text={"Wabiner"} />
                         {/* About */}
                         <ElemntSidebar url={"about"} text={"About"} />
                         <li className="ml-3">

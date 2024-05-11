@@ -1,15 +1,12 @@
-import NavBox from "@/Components/Home/Nav/NavBox";
-import { Button } from "@/Components/shadcn/ui/button";
 import React from "react";
 import { FaRegBookmark } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
-const InputCourse: React.FC = () => {
+const InputWabiner: React.FC = () => {
     return (
         <>
             <h1 className="text-center text-3xl font-bold text-BaseColor mb-3">
-                Search Course
+                Search Wabiner
             </h1>
-            {/* INPUT SEARCH */}
             <form className="flex items-center max-w-sm mx-auto p-2">
                 <label htmlFor="simple-search" className="sr-only">
                     Search
@@ -34,16 +31,8 @@ const InputCourse: React.FC = () => {
                     <span className="sr-only">Search</span>
                 </button>
             </form>
-            {/* END INPUT SEARCH */}
-
-            {/* CATEGORY COURSE */}
-            <div className="w-full h-fit mt-7 flex justify-center gap-3">
-                <Button className="bg-BaseColor">Design grafis</Button>
-                <Button className="bg-BaseColor">Photografer</Button>
-                <Button className="bg-BaseColor">VideoGrafer</Button>
-            </div>
         </>
     );
 };
 
-export default InputCourse;
+export default InputWabiner;
