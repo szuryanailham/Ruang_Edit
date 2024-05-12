@@ -86,14 +86,14 @@ const Footer: React.FC = () => {
                             href="https://flowbite.com/"
                             className="hover:underline"
                         >
-                            Ilham Suryana™
+                            Ruang Edit ™
                         </Link>
                         . All Rights Reserved.
                     </span>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <Link
                             href="#"
-                            className="text-gray-300hover:text-gray-900"
+                            className="text-gray-300 hover:text-gray-900 mr-2"
                         >
                             <FaFacebookF />
                             <span className="sr-only">Facebook page</span>

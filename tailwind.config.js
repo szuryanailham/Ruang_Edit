@@ -13,7 +13,7 @@ module.exports = {
         },
         extend: {
             colors: {
-                BaseColor: "#5D3693",
+                BaseColor: "#2C4E80",
                 SecondBaseColor: "#BE8D25",
                 colorFont: "#4B4B4B",
                 border: "hsl(var(--border))",

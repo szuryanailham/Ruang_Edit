@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader } from "@/Components/shadcn/ui/card";
 import { FaStar, FaBook } from "react-icons/fa";
 import { Badge } from "@/Components/shadcn/ui/badge";
 import { MdPerson } from "react-icons/md";
+import { Link } from "@inertiajs/react";
 
 interface CardCourseProps {
     category: string;
@@ -22,7 +23,7 @@ const CardCourse: React.FC<CardCourseProps> = ({
     image,
 }) => {
     return (
-        <>
+        <Link href="/detailCourse">
             <Card className="w-[280px] mb-5">
                 <CardHeader
                     style={{ backgroundImage: `url('${image}')` }}
@@ -57,7 +58,7 @@ const CardCourse: React.FC<CardCourseProps> = ({
                     </div>
                 </CardContent>
             </Card>
-        </>
+        </Link>
     );
 };
 

@@ -26,5 +26,17 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
     Route::get('/wabiner', function () {
         return Inertia::render('WabinerPage');
     });
+
+    Route::get('/about', function () {
+        return Inertia::render('AboutPage');
+    });
+
+    Route::get('/detailMentor', function () {
+        return Inertia::render('DetailMentorPage');
+    });
+
+    Route::get('/detailCourse', function () {
+        return Inertia::render('DetailCoursePage');
+    });
 });
 ?>

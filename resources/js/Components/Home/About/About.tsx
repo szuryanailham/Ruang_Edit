@@ -10,6 +10,7 @@ const About: React.FC = () => {
             <h1 className="text-4xl text-colorFont font-bold text-center mt-5 w-[80%] mb-3">
                 What is <span className="text-BaseColor">Ruang Edit ?</span>
             </h1>
+
             <p className="p-3 text-center">{paragraphs[0]}</p>
             <p className="p-3 text-center">{paragraphs[1]}</p>
         </div>
