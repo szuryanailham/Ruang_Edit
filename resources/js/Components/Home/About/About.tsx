@@ -1,5 +1,7 @@
 import React from "react";
 import { text_about } from "./Text";
+import { Link } from "@inertiajs/react";
+import { Button } from "@/Components/shadcn/ui/button";
 const About: React.FC = () => {
     const paragraphs = text_about();
     return (
@@ -13,6 +15,17 @@ const About: React.FC = () => {
 
             <p className="p-3 text-center">{paragraphs[0]}</p>
             <p className="p-3 text-center">{paragraphs[1]}</p>
+            <div className="m-3 mx-auto">
+                <Link href="/about">
+                    <Button
+                        className="bg-BaseColor text-white"
+                        variant="outline"
+                        size="lg"
+                    >
+                        See More
+                    </Button>
+                </Link>
+            </div>
         </div>
     );
 };

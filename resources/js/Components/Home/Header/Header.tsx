@@ -33,9 +33,9 @@ const Header: React.FC = () => {
                         <FaCirclePlay className="text-BaseColor w-7 h-5" />
                         What’s etech?
                     </Button>
-                    {/*  */}
                 </div>
             </div>
+
             {/* LINE BRAND PROMO */}
             <div className="mt-4 w-full h-16 bg-BaseColor"></div>
             {/* SEARCH COURSE*/}

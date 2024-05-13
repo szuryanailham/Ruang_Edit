@@ -189,9 +189,11 @@ const NavBox: React.FC = () => {
                         <ElemntSidebar url={"about"} text={"About"} />
                         <li className="ml-3">
                             {/* Sign in */}
-                            <Button className="bg-transparent text-md font-bold">
-                                Login
-                            </Button>
+                            <Link href="/login">
+                                <Button className="bg-transparent text-md font-bold">
+                                    Login
+                                </Button>
+                            </Link>
                         </li>
                         <li className="ml-3">
                             {/* Sign Up */}
