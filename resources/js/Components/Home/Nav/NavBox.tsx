@@ -8,6 +8,13 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/Components/shadcn/ui/accordion";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/Components/shadcn/ui/dropdown-menu";
+
 import { Link } from "@inertiajs/react";
 const NavBox: React.FC = () => {
     const [active, setActive] = useState<boolean>(false);
@@ -28,6 +35,22 @@ const NavBox: React.FC = () => {
         ) {
             setActive(false);
         }
+    };
+
+    const AccordingMenu = () => {
+        return (
+            <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                    <AccordionTrigger>
+                        <ElemntSidebar url={""} text={"Course"} />
+                    </AccordionTrigger>
+                    <AccordionContent>
+                        <ElemntSidebar url={"/class"} text={"Class"} />
+                        <ElemntSidebar url={"/mentor"} text={"Mentor"} />
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
+        );
     };
 
     const ElemntSidebar = ({ text, url }: { text: string; url: string }) => {
@@ -54,9 +77,9 @@ const NavBox: React.FC = () => {
         <>
             <nav
                 ref={navbar}
-                className="bg-white w-full border-gray-200 dark:bg-gray-900 sticky"
+                className="bg-white w-full border-gray-200 sticky"
             >
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-BaseColor">
+                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-BaseColor2 md:bg-white shadow-lg">
                     {/* LOGO NAVBAR */}
                     <Link
                         href="/"
@@ -64,10 +87,10 @@ const NavBox: React.FC = () => {
                     >
                         <img
                             src="/img/Logo.svg"
-                            className="h-10 w-12"
+                            className="h-10 w-12 md:h-12 md:w-[50px]"
                             alt="Flowbite Logo"
                         />
-                        <span className="text-xs font-semibold whitespace-nowrap text-wrap text-white leading-4 w-10">
+                        <span className="text-xs font-semibold whitespace-nowrap text-wrap text-white md:text-black leading-4 w-10 md:text-x md:leading-2">
                             Ruang Edit
                         </span>
                     </Link>
@@ -92,60 +115,94 @@ const NavBox: React.FC = () => {
                         className="hidden w-full md:block md:w-auto p-2"
                         id="navbar-default"
                     >
-                        <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                        <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border items-center border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                            {/* HOME */}
                             <li>
                                 <Link
                                     href="/"
-                                    className="block py-2 px-3 text-white  rounded md:bg-transparent 0 md:p-0"
+                                    className="block  py-2 px-3 text-fontBase rounded md:bg-transparent 0 md:p-0"
                                     aria-current="page"
                                 >
                                     Home
                                 </Link>
                             </li>
+                            {/* COURSE */}
+                            <li>
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger>
+                                        Course
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent>
+                                        <DropdownMenuItem>
+                                            <Link
+                                                href="/class"
+                                                className="block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
+                                            >
+                                                Class
+                                            </Link>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem>
+                                            <Link
+                                                href="/mentor"
+                                                className="block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
+                                            >
+                                                Mentor
+                                            </Link>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+                            </li>
+                            {/* EVENTS  */}
+                            <li>
+                                <a
+                                    href="/events"
+                                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                >
+                                    Events
+                                </a>
+                            </li>
+                            {/* WABINER */}
                             <li>
                                 <Link
-                                    href="#"
+                                    href="/wabiner"
+                                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                >
+                                    Wabiner
+                                </Link>
+                            </li>
+                            {/* ABOUT */}
+                            <li>
+                                <Link
+                                    href="/about"
                                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     About
                                 </Link>
                             </li>
+                            {/* LOGIN */}
                             <li>
-                                <a
-                                    href="#"
-                                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                >
-                                    Services
-                                </a>
+                                <Button className="bg-BaseColor2">
+                                    <Link
+                                        href="/login"
+                                        className="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 p-3"
+                                    >
+                                        Login
+                                    </Link>
+                                </Button>
                             </li>
-                            <li>
-                                <Link
-                                    href="#"
-                                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                >
-                                    Pricing
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="#"
-                                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                >
-                                    Contact
-                                </Link>
-                            </li>
+                            {/* SIGN UP */}
                         </ul>
                     </div>
                 </div>
             </nav>
-            {/* SIDEBAR .... */}
-            {/* <!-- drawer component --> */}
+
+            {/* ============================  SIDEBAR ============================= */}
             <div
                 ref={sidebar}
                 id="drawer-navigation"
-                className={`fixed -inset-y-1 ${
+                className={`fixed -inset-y-1 md:hidden ${
                     active ? "translate-x-0" : "inset-x-0"
-                } z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-BaseColor rounded-sm`}
+                } z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-BaseColor2 rounded-sm`}
                 aria-labelledby="drawer-navigation-label"
             >
                 <button
@@ -164,23 +221,7 @@ const NavBox: React.FC = () => {
                         {/* home */}
                         <ElemntSidebar url={"/"} text={"Home"} />
                         {/* Course */}
-                        <Accordion type="single" collapsible>
-                            <AccordionItem value="item-1">
-                                <AccordionTrigger>
-                                    <ElemntSidebar url={""} text={"Course"} />
-                                </AccordionTrigger>
-                                <AccordionContent>
-                                    <ElemntSidebar
-                                        url={"/class"}
-                                        text={"Class"}
-                                    />
-                                    <ElemntSidebar
-                                        url={"/mentor"}
-                                        text={"Mentor"}
-                                    />
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
+                        <AccordingMenu />
                         {/* event */}
                         <ElemntSidebar url={"/events"} text={"Event"} />
                         {/* wabiner */}

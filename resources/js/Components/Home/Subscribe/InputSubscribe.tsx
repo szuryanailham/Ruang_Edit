@@ -3,9 +3,13 @@ import { Input } from "@/Components/shadcn/ui/input";
 
 export function InputSubscribe() {
     return (
-        <div className="flex w-full max-w-sm items-center space-x-2">
-            <Input className="bg-white" type="email" placeholder="Email" />
-            <Button className="bg-SecondBaseColor" type="submit">
+        <div className="flex w-full md:w-[80%] items-center mx-auto space-x-4">
+            <Input
+                className="bg-white md:py-6"
+                type="email"
+                placeholder="Email"
+            />
+            <Button className="bg-BaseColor2 md:py-6" type="submit">
                 Subscribe
             </Button>
         </div>

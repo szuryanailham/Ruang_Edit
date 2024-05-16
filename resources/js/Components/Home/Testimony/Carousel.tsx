@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from "react";
 import CardTestimony from "./CardTestimony";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -7,45 +8,42 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/Components/shadcn/ui/carousel";
+
 export default function Slider() {
+    const carouselRef = useRef(null);
+
+    useEffect(() => {
+        if (carouselRef.current) {
+            const autoplay = Autoplay(carouselRef.current);
+            return autoplay.stop;
+        }
+    }, []);
+
     return (
         <div>
             <Carousel
+                ref={carouselRef}
                 opts={{
                     align: "start",
                 }}
                 plugins={[
                     Autoplay({
-                        delay: 2000,
+                        delay: 2500,
                     }),
                 ]}
-                className="w-full max-w-sm px-2"
+                className="w-full max-w-sm md:max-w-2xl"
             >
-                <CarouselContent className="mt-3  ">
-                    {/* card satu */}
-                    <CarouselItem className="basis-[75%]">
-                        <div className="flex justify-center">
-                            <CardTestimony />
-                        </div>
-                    </CarouselItem>
-                    {/* card dua */}
-                    <CarouselItem className="basis-[75%]">
-                        <div className=" flex justify-center">
-                            <CardTestimony />
-                        </div>
-                    </CarouselItem>
-                    {/* card ketiga */}
-                    <CarouselItem className="basis-[75%]">
-                        <div className="flex justify-center">
-                            <CardTestimony />
-                        </div>
-                    </CarouselItem>
-                    {/* card kempat*/}
-                    <CarouselItem className="basis-[75%]">
-                        <div className="flex justify-center">
-                            <CardTestimony />
-                        </div>
-                    </CarouselItem>
+                <CarouselContent>
+                    {Array.from({ length: 5 }).map((_, index) => (
+                        <CarouselItem
+                            key={index}
+                            className="basis-[80%] md:basis-[75%]"
+                        >
+                            <div className="p-1 mx-auto">
+                                <CardTestimony />
+                            </div>
+                        </CarouselItem>
+                    ))}
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />

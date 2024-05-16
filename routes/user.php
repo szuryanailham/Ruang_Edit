@@ -1,7 +1,10 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Inertia\Inertia;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 Route::namespace('App\Http\Controllers\User')->group(function () {
     Route::get('/', function () {
@@ -39,4 +42,8 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
         return Inertia::render('DetailCoursePage');
     });
 });
-?>
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+

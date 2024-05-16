@@ -11,13 +11,31 @@ const PopularCourse: React.FC = () => {
         );
     };
     return (
-        <div className=" p-3 w-full h-fit bg-BaseColor flex flex-col items-center">
+        <div className=" p-5 md:p-10 w-full h-fit bg-BaseColor2 flex flex-col items-center">
             <h1 className="w-[80%] text-white font-bold text-3xl text-center mt-3">
                 Our Popular Course
             </h1>
-            <p className="p-5 text-sm text-center text-white">{text()}</p>
+            <p className="p-5 text-sm md:text-xl text-center mb-3 text-white w-full md:w-[90%]">
+                {text()}
+            </p>
             {/* POPULAR CARD */}
-            <div className="mt-2">
+            <div className="mt-2 flex flex-col md:flex-row gap-5 md:p-3">
+                <CardCourse
+                    image="/img/card_course_img.svg"
+                    category="design"
+                    title="Class Videografer with CapCut"
+                    rating={4.5}
+                    course={7}
+                    member={50}
+                />
+                <CardCourse
+                    image="/img/card_course_img.svg"
+                    category="design"
+                    title="Class Videografer with CapCut"
+                    rating={4.5}
+                    course={7}
+                    member={50}
+                />
                 <CardCourse
                     image="/img/card_course_img.svg"
                     category="design"

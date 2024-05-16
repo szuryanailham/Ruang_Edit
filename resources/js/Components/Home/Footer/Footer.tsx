@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-BaseColor text-white">
+        <footer className="bg-BaseColor2 text-white">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
