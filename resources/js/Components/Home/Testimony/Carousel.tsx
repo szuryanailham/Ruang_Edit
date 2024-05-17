@@ -31,13 +31,13 @@ export default function Slider() {
                         delay: 2500,
                     }),
                 ]}
-                className="w-full max-w-sm md:max-w-2xl"
+                className="w-full max-w-sm md:max-w-2xl lg:max-w-5xl"
             >
                 <CarouselContent>
                     {Array.from({ length: 5 }).map((_, index) => (
                         <CarouselItem
                             key={index}
-                            className="basis-[80%] md:basis-[75%]"
+                            className="basis-[80%] md:basis-[75%] lg:basis-[35%]  "
                         >
                             <div className="p-1 mx-auto">
                                 <CardTestimony />

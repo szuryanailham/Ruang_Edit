@@ -37,10 +37,10 @@ const InputCourse: React.FC = () => {
             {/* END INPUT SEARCH */}
 
             {/* CATEGORY COURSE */}
-            <div className="w-full h-fit mt-7 flex justify-center gap-3">
-                <Button className="bg-BaseColor">Design grafis</Button>
-                <Button className="bg-BaseColor">Photografer</Button>
-                <Button className="bg-BaseColor">VideoGrafer</Button>
+            <div className="w-full h-fit mt-7 flex justify-center gap-3 md:gap-5">
+                <Button className="bg-BaseColor2">Design grafis</Button>
+                <Button className="bg-BaseColor2">Photografer</Button>
+                <Button className="bg-BaseColor2">VideoGrafer</Button>
             </div>
         </>
     );

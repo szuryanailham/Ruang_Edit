@@ -3,7 +3,7 @@ import { Input } from "@/Components/shadcn/ui/input";
 
 export function InputSubscribe() {
     return (
-        <div className="flex w-full md:w-[80%] items-center mx-auto space-x-4">
+        <div className="flex w-full md:w-[80%] lg:w-[60%] items-center mx-auto space-x-4">
             <Input
                 className="bg-white md:py-6"
                 type="email"

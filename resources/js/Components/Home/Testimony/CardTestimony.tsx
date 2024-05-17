@@ -21,9 +21,9 @@ const CardTestimony: React.FC = () => {
         );
     };
     return (
-        <div className="bg-white w-[300px] md:w-[500px] h-[150px] md:h-[220px] p-1 rounded-t-lg shadow-md">
+        <div className="bg-white w-[300px] md:w-[500px] lg:w-[350px] h-[150px] md:h-[220px] lh:h-[200px] p-1 rounded-lg shadow-md">
             <div className="flex item-center py-2 px-3 gap-5 md:gap-7">
-                <Avatar className="w-[60px] md:w-[70px] h-[60px] md:h-[70px]">
+                <Avatar className="w-[60px] md:w-[70px] lg:w-[40px] h-[60px] md:h-[70px] lg:h-[40px]">
                     <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
@@ -36,7 +36,7 @@ const CardTestimony: React.FC = () => {
                 </div>
                 {/* comment */}
             </div>
-            <p className=" px-3 mb-3 leading-5 text-center text-xs md:text-xl md:px-10">
+            <p className=" px-3 mb-3 leading-5 text-center text-xs md:text-xl lg:text-sm md:px-10 lg:mt-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
                 ipsa fugit! Placeat aperiam
             </p>

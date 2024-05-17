@@ -37,7 +37,7 @@ const InputSearch: React.FC = () => {
             {/* END INPUT SEARCH */}
 
             {/* CATEGORY COURSE */}
-            <div className="w-full h-fit mt-7 flex justify-center gap-3">
+            <div className="w-full h-fit mt-7 flex md:w-[90%] mx-auto justify-around gap-3">
                 <Button className="bg-BaseColor">Design grafis</Button>
                 <Button className="bg-BaseColor">Photografer</Button>
                 <Button className="bg-BaseColor">VideoGrafer</Button>

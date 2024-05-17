@@ -20,10 +20,11 @@ const MentorPage: React.FC = () => {
         <>
             <Head title="Mentor PAge" />
             <NavBox />
-            <section className=" h-fit w-full p-5">
+            <section className=" h-fit w-full mx-auto p-5">
                 <InputSearch />
                 {/* CARDS MENTOR */}
-                <div className="mt-5 flex flex-col item-center">
+                <div className="px-5 py-3 mt-5 mx-auto md:mt-10 flex flex-col md:flex-row gap-10 flex-wrap item-center">
+                    <CardMentor />
                     <CardMentor />
                     <CardMentor />
                     <CardMentor />

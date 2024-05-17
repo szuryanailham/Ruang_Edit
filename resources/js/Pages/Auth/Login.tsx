@@ -42,11 +42,12 @@ export default function Login({
                 </div>
             )}
             <NavBox />
+
             <div className="mt-2 h-fit flex flex-col w-full item-center p-4">
                 {/* LOGIN IMAGE */}
                 <div
                     style={{ backgroundImage: `url('/img/login_image.svg')` }}
-                    className="w-full h-[200px] bg-BaseColor  m rounded-md bg-cover bg-no-repeat"
+                    className="w-full md:w-[90%] h-[200px] md:h-[350px] bg-BaseColor bg-center rounded-lg bg-cover bg-no-repeat mx-auto"
                 ></div>
                 {/* END LOGIN IMAGE  */}
 

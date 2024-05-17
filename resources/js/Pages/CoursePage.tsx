@@ -17,9 +17,9 @@ const CoursePage: React.FC = () => {
     return (
         <>
             <NavBox />
-            <section className=" h-fit w-full p-5">
+            <section className=" h-fit w-full p-3 mb-[5%]">
                 <InputCourse />
-                <div className="mt-7 flex flex-col items-center">
+                <div className="mt-7 flex flex-col gap-5 md:flex-row flex-wrap  items-center">
                     {/* card 1 */}
                     <CardCourse
                         image="/img/card_course_img.svg"
@@ -41,9 +41,31 @@ const CoursePage: React.FC = () => {
                         member={50}
                     />
                     {/* end card 2 */}
+
+                    {/* card 3 */}
+                    <CardCourse
+                        image="/img/card_course_img2.svg"
+                        category="design"
+                        title="Class Grading with Lightroom"
+                        rating={4.5}
+                        course={7}
+                        member={50}
+                    />
+                    {/* end card 3 */}
+
+                    {/* card 3 */}
+                    <CardCourse
+                        image="/img/card_course_img2.svg"
+                        category="design"
+                        title="Class Grading with Lightroom"
+                        rating={4.5}
+                        course={7}
+                        member={50}
+                    />
+                    {/* end card 3 */}
                 </div>
                 {/* pagination */}
-                <Pagination className="p-3">
+                <Pagination className="mx-auto mt-5 md:mt-10 ">
                     <PaginationContent>
                         <PaginationItem>
                             <PaginationPrevious

@@ -77,7 +77,7 @@ const NavBox: React.FC = () => {
         <>
             <nav
                 ref={navbar}
-                className="bg-white w-full border-gray-200 sticky"
+                className="bg-white z-10 w-full border-gray-200 sticky top-0"
             >
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-BaseColor2 md:bg-white shadow-lg">
                     {/* LOGO NAVBAR */}
