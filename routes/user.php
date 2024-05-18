@@ -1,4 +1,8 @@
 <?php
+// MODEL CALLING
+use App\Http\Controllers\MonthMateriController;
+use App\Http\Controllers\ListMateriController;
+//END MODEL CALLING
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -43,7 +47,8 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
     });
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [MonthMateriController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/list-Materi/{month_Materi}', [MonthMateriController::class, 'show']);
+    Route::get('/dashboard/detail-Materi/{list_Materi}', [ListMateriController::class, 'index']);
+});
