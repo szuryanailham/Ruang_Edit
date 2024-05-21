@@ -16,45 +16,46 @@ class ListMateriSeeder extends Seeder
         $data = [
             [
                 'KD_bulan' => 1,
-                'kode_materi' => 'M001',
-                'judul' => 'Pengenalan Pemrograman PHP',
-                'deskripsi' => 'Materi ini membahas dasar-dasar pemrograman PHP.',
-                'link_youtube' => 'https://www.youtube.com/watch?v=12345',
-                'author' => 'John Doe'
+                'kode_materi' => 'D001',
+                'judul' => 'Pengenalan Desain Grafis',
+                'deskripsi' => 'Materi ini membahas dasar-dasar desain grafis, termasuk elemen dan prinsip desain.',
+                'kode_youtube' => 'zQ_FUW_orks',
+                'author' => 'Alice Green'
             ],
             [
                 'KD_bulan' => 2,
-                'kode_materi' => 'M002',
-                'judul' => 'Manipulasi Database dengan SQL',
-                'deskripsi' => 'Materi ini membahas cara manipulasi database menggunakan SQL.',
-                'link_youtube' => 'https://www.youtube.com/watch?v=67890',
-                'author' => 'Jane Smith'
+                'kode_materi' => 'D002',
+                'judul' => 'Fotografi Dasar',
+                'deskripsi' => 'Materi ini membahas teknik dasar fotografi, termasuk komposisi dan pencahayaan.',
+                'kode_youtube' => 'oGSApd6naIA',
+                'author' => 'Bob Smith'
             ],
             [
                 'KD_bulan' => 2,
-                'kode_materi' => 'M003',
-                'judul' => 'Pengenalan Framework Laravel',
-                'deskripsi' => 'Materi ini membahas pengenalan dan penggunaan dasar Laravel.',
-                'link_youtube' => 'https://www.youtube.com/watch?v=ABCDE',
-                'author' => 'Mike Johnson'
+                'kode_materi' => 'D003',
+                'judul' => 'Editing Foto dengan Photoshop',
+                'deskripsi' => 'Materi ini membahas teknik dasar pengeditan foto menggunakan Adobe Photoshop.',
+                'kode_youtube' => '0480Rrzy8Xs',
+                'author' => 'Charlie Johnson'
             ],
             [
                 'KD_bulan' => 4,
-                'kode_materi' => 'M004',
-                'judul' => 'Penggunaan Blade Templating Engine',
-                'deskripsi' => 'Materi ini membahas penggunaan Blade untuk membuat tampilan dinamis.',
-                'link_youtube' => 'https://www.youtube.com/watch?v=FGHIJ',
-                'author' => 'Emily Brown'
+                'kode_materi' => 'D004',
+                'judul' => 'Pengenalan Videografi',
+                'deskripsi' => 'Materi ini membahas dasar-dasar videografi, termasuk penggunaan kamera dan pengaturan pengambilan gambar.',
+                'kode_youtube' => 'weftV1gYSD8',
+                'author' => 'Diana Brown'
             ],
             [
                 'KD_bulan' => 5,
-                'kode_materi' => 'M005',
-                'judul' => 'Pengenalan Vue.js',
-                'deskripsi' => 'Materi ini membahas pengenalan dan penggunaan dasar Vue.js.',
-                'link_youtube' => 'https://www.youtube.com/watch?v=KLMNO',
-                'author' => 'David Wilson'
+                'kode_materi' => 'D005',
+                'judul' => 'Editing Video dengan Adobe Premiere Pro',
+                'deskripsi' => 'Materi ini membahas teknik dasar pengeditan video menggunakan Adobe Premiere Pro.',
+                'kode_youtube' => '0480Rrzy8Xs',
+                'author' => 'Edward Wilson'
             ]
         ];
+        
 
             List_Materi::insert($data);
     }

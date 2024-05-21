@@ -23,7 +23,7 @@ const CardTestimony: React.FC = () => {
     return (
         <div className="bg-white w-[300px] md:w-[500px] lg:w-[350px] h-[150px] md:h-[220px] lh:h-[200px] p-1 rounded-lg shadow-md">
             <div className="flex item-center py-2 px-3 gap-5 md:gap-7">
-                <Avatar className="w-[60px] md:w-[70px] lg:w-[40px] h-[60px] md:h-[70px] lg:h-[40px]">
+                <Avatar className="w-[60px] md:w-[70px] lg:w-[50px] h-[60px] md:h-[70px] lg:h-[50px]">
                     <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>

@@ -20,7 +20,7 @@ class ListMateriResource extends JsonResource
             'kode_materi' => $this->kode_materi,
             'judul' => $this->judul,
             'deskripsi' => $this->deskripsi,
-            'link_youtube' => $this->link_youtube,
+            'kode_youtube' => $this->kode_youtube,
             'author' => $this->author,
         ];
     }

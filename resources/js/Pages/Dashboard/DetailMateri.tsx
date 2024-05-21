@@ -1,10 +1,13 @@
-import React from "react";
+import YouTubeEmbed from "@/Components/About/YouTubeEmbed";
+import Navbar from "@/Components/Dashboard/Navbar";
+import { Link } from "@inertiajs/react";
 
+import React from "react";
 interface Materi {
     id: number;
     judul: string;
     deskripsi: string;
-    link_youtube: string;
+    kode_youtube: string;
     author: string;
 }
 
@@ -14,20 +17,34 @@ interface Datatype {
 }
 
 const DetailMateri: React.FC<Datatype> = ({ title, Detail_materi }) => {
+    console.log(Detail_materi);
     return (
         <>
-            {Detail_materi.map((item, index) => {
-                return (
-                    <div key={index}>
-                        {/* Isi elemen div di sini */}
-                        <h1>{item.id}</h1>
-                        <h1>{item.judul}</h1>
-                        <h1>{item.deskripsi}</h1>
-                        <h1>{item.link_youtube}</h1>
-                    </div>
-                );
-            })}
-            <h1>{title}</h1>
+            <div className="p-4 sm:ml-64">
+                <Navbar />
+                <h1 className="text-center font-bold text-2xl mt-5">
+                    Detail Materi
+                </h1>
+                <div className="p-2 mt-3">
+                    {Detail_materi.map((item, index) => {
+                        return (
+                            <div key={index}>
+                                {/* Youtube video */}
+                                <YouTubeEmbed videoId={item.kode_youtube} />
+                                {/* Judul Materi */}
+                                <h1 className="text-xl text-wrap text-center mt-3 font-bold">
+                                    {item.judul}
+                                </h1>
+
+                                {/* Deskripsi video */}
+                                <p className="p-2 text-center">
+                                    {item.deskripsi}
+                                </p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
         </>
     );
 };

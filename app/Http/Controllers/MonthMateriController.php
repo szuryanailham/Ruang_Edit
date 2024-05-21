@@ -23,26 +23,6 @@ class MonthMateriController extends Controller
             'Months' => Month_Materi::all(),
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreMonth_MateriRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Month_Materi $month_Materi)
     {
         $materi = List_Materi::where('KD_bulan', $month_Materi->id)->get();
@@ -53,27 +33,20 @@ class MonthMateriController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Month_Materi $month_Materi)
-    {
-        //
+    public function listMateriAdmin(){
+        return Inertia::render('Dashboard/Admin/ListEditMateri', [
+            'title' => "Edit Materi bulanan",
+            'Months' => Month_Materi::all(),
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateMonth_MateriRequest $request, Month_Materi $month_Materi)
+    public function showAdmin(Month_Materi $month_Materi)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Month_Materi $month_Materi)
-    {
-        //
+        $materi = List_Materi::where('KD_bulan', $month_Materi->id)->get();
+        $materiResource = ListMateriResource::collection($materi)->resolve();
+        return Inertia::render('Dashboard/Admin/Materi', [
+            'title' => "daftar materi ". $month_Materi->nama_bulan,
+            'materi' => $materiResource,
+        ]);
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('kode_materi')->unique();
             $table->string('judul');
             $table->text('deskripsi');
-            $table->string('link_youtube');
+            $table->string('kode_youtube');
             $table->string('author');
             $table->timestamps();
         });
