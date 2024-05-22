@@ -17,7 +17,7 @@ const Welcome: React.FC<Datatype> = ({ title, Months }) => {
     return (
         <div className="p-4 sm:ml-64">
             <Navbar />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5 mx-auto">
                 {Months.map((month, index) => (
                     <Link
                         key={index}

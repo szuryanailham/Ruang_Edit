@@ -122,7 +122,7 @@ function SidebarDashboard() {
                             {/* EDIT MATERI */}
                             <li>
                                 <Link
-                                    href="/dashboard/list-edit"
+                                    href="/admin/list-bulan"
                                     className=" flex  items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group hover:text-black"
                                 >
                                     <FaEdit className="text-2xl" />

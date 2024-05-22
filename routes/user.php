@@ -1,16 +1,14 @@
 <?php
-// MODEL CALLING
-use App\Http\Controllers\MonthMateriController;
-use App\Http\Controllers\ListMateriController;
-//END MODEL CALLING
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Inertia\Inertia;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 Route::namespace('App\Http\Controllers\User')->group(function () {
+
     Route::get('/', function () {
         return Inertia::render('Welcome', [
             'laravelVersion' => Application::VERSION,
@@ -45,10 +43,10 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
     Route::get('/detailCourse', function () {
         return Inertia::render('DetailCoursePage');
     });
-});
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [MonthMateriController::class, 'index'])->name('dashboard');
-    Route::get('/dashboard/list-Materi/{month_Materi}', [MonthMateriController::class, 'show']);
-    Route::get('/dashboard/detail-Materi/{list_Materi}', [ListMateriController::class, 'index']);
+    Route::middleware(['auth', 'verified'])->group(function () {
+        Route::get('/dashboard', 'MonthMateriController@index')->name('dashboard');
+        Route::get('/dashboard/list-Materi/{month_Materi}', 'MonthMateriController@show');
+        Route::get('/dashboard/detail-Materi/{list_Materi}', 'ListMateriController@index');
+    });
 });

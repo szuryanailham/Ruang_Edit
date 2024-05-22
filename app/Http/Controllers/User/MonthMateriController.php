@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
+use App\Http\Controllers\Controller;
 // CALLING MODEL
 use App\Models\Month_Materi;
 use App\Models\List_Materi;
@@ -37,16 +38,6 @@ class MonthMateriController extends Controller
         return Inertia::render('Dashboard/Admin/ListEditMateri', [
             'title' => "Edit Materi bulanan",
             'Months' => Month_Materi::all(),
-        ]);
-    }
-
-    public function showAdmin(Month_Materi $month_Materi)
-    {
-        $materi = List_Materi::where('KD_bulan', $month_Materi->id)->get();
-        $materiResource = ListMateriResource::collection($materi)->resolve();
-        return Inertia::render('Dashboard/Admin/Materi', [
-            'title' => "daftar materi ". $month_Materi->nama_bulan,
-            'materi' => $materiResource,
         ]);
     }
 }

@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\MonthMateriController;
+use App\Http\Controllers\Admin\AdminMateriController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard/list-edit',[MonthMateriController::class,'listMateriAdmin']);
-    Route::get('/dashboard/list-edit/materi/{month_Materi}',[MonthMateriController::class,'showAdmin']);
+Route::namespace('App\Http\Controllers\Admin')->group(function () {
+    Route::middleware(['auth', 'verified'])->group(function () {
+        Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+            Route::get('/list-bulan', 'AdminMateriController@index');
+            Route::get('/list-materi/{month_Materi}', 'AdminMateriController@show');
+             Route::resource('/edit-materi',AdminMateriController::class);
+        });
+    });
 });
-
-
-
