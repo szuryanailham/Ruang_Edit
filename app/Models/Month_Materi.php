@@ -10,6 +10,8 @@ class Month_Materi extends Model
 {
     use HasFactory;
 
+    protected $guarded = ["id"];
+
     public function materis()
     {
         return $this->hasMany(List_Materi::class);

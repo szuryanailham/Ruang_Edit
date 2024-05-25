@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class List_Materi extends Model
 {
     use HasFactory;
+    // protected $table = 'list_materi';
+    protected $guarded = ["id"];
 
     public function Month_Materi()
     {

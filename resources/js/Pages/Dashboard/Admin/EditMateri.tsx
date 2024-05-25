@@ -1,8 +1,10 @@
 import Navbar from "@/Components/Dashboard/Navbar";
+import React from "react";
 import { Button } from "@/Components/shadcn/ui/button";
 import { Input } from "@/Components/shadcn/ui/input";
 import { Label } from "@/Components/shadcn/ui/label";
 import { Textarea } from "@/Components/shadcn/ui/textarea";
+import { useForm } from "@inertiajs/react";
 import {
     Select,
     SelectContent,
@@ -11,45 +13,64 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/Components/shadcn/ui/select";
-import React from "react";
-import { useForm } from "@inertiajs/react";
 
 interface Month {
     id: number;
+    nama_bulan: string;
+}
+interface bulancurrent {
+    nama_bulan: string;
+}
+interface Materi {
+    id: number;
+    KD_bulan: string;
+    kode_materi: string;
+    judul: string;
+    deskripsi: string;
+    kode_youtube: string;
+    author: string;
     nama_bulan: string;
 }
 
 interface Datatype {
     title: string;
     Months: Month[];
+    Materi: Materi;
+    bulancurrent: bulancurrent;
 }
-
-const AddNewAdmin: React.FC<Datatype> = ({ title, Months }) => {
-    const { data, setData, post, processing, errors } = useForm({
-        kode_materi: "",
-        judul: "",
-        author: "",
-        kode_youtube: "",
-        nama_bulan: "",
-        deskripsi: "",
+const EditMateri: React.FC<Datatype> = ({
+    title,
+    Months,
+    Materi,
+    bulancurrent,
+}) => {
+    const { data, setData, put, processing, errors } = useForm({
+        judul: Materi.judul,
+        author: Materi.author,
+        kode_youtube: Materi.kode_youtube,
+        nama_bulan: bulancurrent.nama_bulan,
+        deskripsi: Materi.deskripsi,
+        kode_materi: Materi.kode_materi,
     });
-
     const submit = (e: React.FormEvent) => {
         e.preventDefault();
-        post("/admin/edit-materi", {
+        put(`/admin/edit-materi/${Materi.kode_materi}`, {
             onSuccess: () => {
-                console.log("Form submitted successfully");
+                alert("The material has been updated successfully.");
             },
             onError: () => {
-                console.log("An error occurred while submitting the form");
+                alert("Failed to update the material. Please try again.");
             },
         });
     };
+
     return (
         <>
             <Navbar />
-            <div className="md:ml-[250px] mb-10">
-                <h1 className="text-2xl font-bold text-center m-5">{title}</h1>
+            <div className="md:ml-[270px] mb-[100px] ">
+                <h1 className="text-3xl my-5 text-center font-bold">
+                    Edit materi
+                </h1>
                 <form
                     className="grid w-full max-w-sm md:max-w-xl mx-auto items-center gap-1.5 space-y-3 px-5 md:px-7"
                     onSubmit={submit}
@@ -108,6 +129,7 @@ const AddNewAdmin: React.FC<Datatype> = ({ title, Months }) => {
                             <SelectValue placeholder="Pilih kategori bulan" />
                         </SelectTrigger>
                         <SelectContent>
+                            asasasas
                             <SelectGroup>
                                 {Months.map((item) => (
                                     <SelectItem
@@ -149,4 +171,4 @@ const AddNewAdmin: React.FC<Datatype> = ({ title, Months }) => {
     );
 };
 
-export default AddNewAdmin;
+export default EditMateri;

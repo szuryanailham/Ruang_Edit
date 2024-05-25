@@ -10,7 +10,7 @@ const AboutPage: React.FC = () => {
             <NavBox />
             <div className="mt-2 h-fit flex flex-col w-full item-center p-3">
                 {/* IMAGE PROFILE */}
-                <YouTubeEmbed videoId="lJXaNYTVjrQ" />
+                <YouTubeEmbed videoId="Fvo5vEg4xYg" />
                 {/* END IMAGE PROFILE */}
 
                 {/* TITLE */}

@@ -15,6 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            // bidang
+            $table->enum('Bidang', ['Design', 'Photographer', 'Videographer'])->default('Design');
+            // is admin
+            $table->boolean('isAdmin');
+            // access
+            $table->boolean('access');
+            // no telpon
+            $table->string('no_telpon');
+            // Alamat
+            $table->text('alamat');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
