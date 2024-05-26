@@ -4,7 +4,12 @@ import YouTubeEmbed from "@/Components/About/YouTubeEmbed";
 import Footer from "@/Components/Home/Footer/Footer";
 import NavBox from "@/Components/Home/Nav/NavBox";
 import React from "react";
-const AboutPage: React.FC = () => {
+import { User } from "@/types";
+
+interface AboutPageProps {
+    user: User;
+}
+const AboutPage: React.FC<AboutPageProps> = ({ user }) => {
     return (
         <>
             <NavBox />

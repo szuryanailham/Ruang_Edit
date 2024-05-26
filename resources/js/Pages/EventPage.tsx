@@ -12,7 +12,12 @@ import {
     CarouselPrevious,
 } from "@/Components/shadcn/ui/carousel";
 import React from "react";
-const EventPage: React.FC = () => {
+import { User } from "@/types";
+
+interface Props {
+    user: User;
+}
+const EventPage: React.FC<Props> = ({ user }) => {
     return (
         <>
             <NavBox />

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Application;
 use Inertia\Inertia;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -9,40 +8,22 @@ use Illuminate\Support\Facades\Auth;
 
 Route::namespace('App\Http\Controllers\User')->group(function () {
 
-    Route::get('/', function () {
-        return Inertia::render('Welcome', [
-            'laravelVersion' => Application::VERSION,
-            'phpVersion' => PHP_VERSION,
-        ]);
-    });
+       
+    Route::get('/', 'HomeController@index');
 
-    Route::get('/mentor', function () {
-        return Inertia::render('MentorPage');
-    });
 
-    Route::get('/class', function () {
-        return Inertia::render('CoursePage');
-    });
+    Route::get('/mentor', 'HomeController@mentor');
 
-    Route::get('/events', function () {
-        return Inertia::render('EventPage');
-    });
+    
+    Route::get('/class', 'HomeController@course');
+    
+    Route::get('/events', 'HomeController@event');
+    Route::get('/wabiner', 'HomeController@wabiner');
+    Route::get('/about', 'HomeController@about');
 
-    Route::get('/wabiner', function () {
-        return Inertia::render('WabinerPage');
-    });
+    Route::get('/detailMentor', 'HomeController@detailMentor');
 
-    Route::get('/about', function () {
-        return Inertia::render('AboutPage');
-    });
-
-    Route::get('/detailMentor', function () {
-        return Inertia::render('DetailMentorPage');
-    });
-
-    Route::get('/detailCourse', function () {
-        return Inertia::render('DetailCoursePage');
-    });
+    Route::get('/detailCourse', 'HomeController@detailCourse');
 
     Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/dashboard', 'MonthMateriController@index')->name('dashboard');

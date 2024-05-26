@@ -2,6 +2,12 @@ import InputCourse from "@/Components/Course/InputCourse";
 import NavBox from "@/Components/Home/Nav/NavBox";
 import CardCourse from "@/Components/Home/PopularCourse/CardCourse";
 import React from "react";
+import { User } from "@/types";
+
+interface AboutPageProps {
+    user: User;
+}
+
 import {
     Pagination,
     PaginationContent,
@@ -12,8 +18,8 @@ import {
     PaginationPrevious,
 } from "@/Components/shadcn/ui/pagination";
 import Footer from "@/Components/Home/Footer/Footer";
-NavBox;
-const CoursePage: React.FC = () => {
+
+const CoursePage: React.FC<AboutPageProps> = ({ user }) => {
     return (
         <>
             <NavBox />

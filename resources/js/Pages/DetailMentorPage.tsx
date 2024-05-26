@@ -1,7 +1,13 @@
 import Footer from "@/Components/Home/Footer/Footer";
 import NavBox from "@/Components/Home/Nav/NavBox";
 import React from "react";
-const DetailMentorPage: React.FC = () => {
+import { User } from "@/types";
+
+interface Props {
+    user: User;
+}
+const DetailMentorPage: React.FC<Props> = ({ user }) => {
+    console.log(user);
     return (
         <>
             <NavBox />

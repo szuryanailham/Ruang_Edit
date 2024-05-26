@@ -1,6 +1,15 @@
 import Navbar from "@/Components/Dashboard/Navbar";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import React from "react";
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
+} from "@/Components/shadcn/ui/pagination";
 
 interface Materi {
     id: number;
@@ -10,12 +19,40 @@ interface Materi {
     deskripsi: string;
 }
 
-interface Datatype {
-    title: string;
-    materi: Materi[];
+interface PaginationData {
+    data: Materi[];
+    first_page_url: string;
+    from: number;
+    last_page: number;
+    last_page_url: string;
+    links: [url: string | null, label: string, active: boolean];
+    next_page_url: string | null;
+    path: string;
+    per_page: number;
+    prev_page_url: string | null;
+    to: number;
+    total: number;
+    current_page: number;
 }
 
-const ListMateri: React.FC<Datatype> = ({ title, materi }) => {
+interface Datatype {
+    current_page: string;
+    title: string;
+    materi: Materi[];
+    Links: PaginationData;
+    paginator: PaginationData[];
+}
+
+const ListMateri: React.FC<Datatype> = ({
+    title,
+    materi,
+    Links,
+    paginator,
+}) => {
+    const page = Links.links;
+    const activeLink = page.find((link: any) => link.active === true);
+    const linksArray = Object.values(paginator[0]);
+    const url = activeLink ? activeLink.url : "";
     return (
         <div className="p-4 sm:ml-64">
             <Navbar />
@@ -40,6 +77,39 @@ const ListMateri: React.FC<Datatype> = ({ title, materi }) => {
                     </div>
                 ))}
             </div>
+            <Pagination>
+                <PaginationContent>
+                    {/* previous */}
+                    <PaginationItem>
+                        <PaginationPrevious href={Links.prev_page_url || ""} />
+                    </PaginationItem>
+                    {/* numbrt */}
+                    <Pagination>
+                        <PaginationContent>
+                            {linksArray.map((item: string, index: number) => (
+                                <PaginationItem key={index}>
+                                    <PaginationLink
+                                        href={item}
+                                        className={`px-3 py-1 hover:bg-black hover:text-white text-white-700 rounded-md ${
+                                            item === url
+                                                ? "bg-black text-white"
+                                                : "bg-transparent"
+                                        }`}
+                                    >
+                                        {index + 1}
+                                    </PaginationLink>
+                                </PaginationItem>
+                            ))}
+                        </PaginationContent>
+                    </Pagination>
+
+                    {/* end numvber */}
+                    <PaginationItem>
+                        {/* next  */}
+                        <PaginationNext href={Links.next_page_url || ""} />
+                    </PaginationItem>
+                </PaginationContent>
+            </Pagination>
         </div>
     );
 };

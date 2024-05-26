@@ -4,7 +4,13 @@ import React from "react";
 import Footer from "@/Components/Home/Footer/Footer";
 import { Link } from "@inertiajs/react";
 import { Button } from "@/Components/shadcn/ui/button";
-const DetailCoursePage: React.FC = () => {
+import { User } from "@/types";
+
+interface Props {
+    user: User;
+}
+
+const DetailCoursePage: React.FC<Props> = ({ user }) => {
     return (
         <>
             <NavBox />

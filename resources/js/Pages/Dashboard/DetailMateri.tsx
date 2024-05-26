@@ -1,6 +1,7 @@
 import YouTubeEmbed from "@/Components/About/YouTubeEmbed";
 import Navbar from "@/Components/Dashboard/Navbar";
 import { Link } from "@inertiajs/react";
+import { User } from "@/types";
 
 import React from "react";
 interface Materi {
@@ -17,7 +18,6 @@ interface Datatype {
 }
 
 const DetailMateri: React.FC<Datatype> = ({ title, Detail_materi }) => {
-    console.log(Detail_materi);
     return (
         <>
             <div className="p-4 sm:ml-64">

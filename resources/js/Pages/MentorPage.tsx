@@ -12,13 +12,17 @@ import {
     PaginationPrevious,
 } from "@/Components/shadcn/ui/pagination";
 import { Head } from "@inertiajs/react";
-
+import { User } from "@/types";
 import React from "react";
 
-const MentorPage: React.FC = () => {
+interface AboutPageProps {
+    user: User;
+}
+
+const MentorPage: React.FC<AboutPageProps> = ({ user }) => {
     return (
         <>
-            <Head title="Mentor PAge" />
+            <Head title="Mentor Page" />
             <NavBox />
             <section className=" h-fit w-full mx-auto p-5">
                 <InputSearch />

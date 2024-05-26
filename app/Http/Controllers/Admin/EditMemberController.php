@@ -12,9 +12,13 @@ class EditMemberController extends Controller
      */
     public function index()
     {
+        $members = User::paginate(10);
+        $link = $members->links();
         return Inertia::render('Dashboard/Admin/AllMember', [
             'title' => "List Materi perbulan",
-            'member'=> User::all()
+            'member' => $members,
+            'Links' => $link->paginator,
+            'paginator' => $link->elements
         ]);
     }
 
@@ -63,6 +67,7 @@ class EditMemberController extends Controller
      */
     public function destroy(User $edit_member)
     {
-        dd($edit_member);
+        $edit_member->delete();
+        return redirect()->route('admin.edit-member.index')->with('success', 'User deleted successfully');
     }
 }

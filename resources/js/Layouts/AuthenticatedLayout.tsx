@@ -12,7 +12,6 @@ export default function Authenticated({
 }: PropsWithChildren<{ user: User; header?: ReactNode }>) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
-
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-white border-b border-gray-100">

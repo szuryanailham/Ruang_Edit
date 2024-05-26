@@ -7,11 +7,14 @@ import About from "@/Components/Home/About/About";
 import Testimony from "@/Components/Home/Testimony/Testimony";
 import Subscribe from "@/Components/Home/Subscribe/Subscribe";
 import Footer from "@/Components/Home/Footer/Footer";
+import { User } from "@/types";
+
 export default function Welcome({
     auth,
     laravelVersion,
     phpVersion,
-}: PageProps<{ laravelVersion: string; phpVersion: string }>) {
+    user,
+}: PageProps<{ user: User; laravelVersion: string; phpVersion: string }>) {
     return (
         <>
             <Head title="HomePage" />

@@ -23,5 +23,6 @@ class ListMateriResource extends JsonResource
             'kode_youtube' => $this->kode_youtube,
             'author' => $this->author,
         ];
+        
     }
 }

@@ -23,7 +23,7 @@ class ListMateriSeeder extends Seeder
                 'author' => 'Alice Green'
             ],
             [
-                'KD_bulan' => 2,
+                'KD_bulan' => 1,
                 'kode_materi' => 'D002',
                 'judul' => 'Fotografi Dasar',
                 'deskripsi' => 'Materi ini membahas teknik dasar fotografi, termasuk komposisi dan pencahayaan.',
@@ -31,7 +31,7 @@ class ListMateriSeeder extends Seeder
                 'author' => 'Bob Smith'
             ],
             [
-                'KD_bulan' => 2,
+                'KD_bulan' => 1,
                 'kode_materi' => 'D003',
                 'judul' => 'Editing Foto dengan Photoshop',
                 'deskripsi' => 'Materi ini membahas teknik dasar pengeditan foto menggunakan Adobe Photoshop.',
@@ -39,7 +39,7 @@ class ListMateriSeeder extends Seeder
                 'author' => 'Charlie Johnson'
             ],
             [
-                'KD_bulan' => 4,
+                'KD_bulan' => 1,
                 'kode_materi' => 'D004',
                 'judul' => 'Pengenalan Videografi',
                 'deskripsi' => 'Materi ini membahas dasar-dasar videografi, termasuk penggunaan kamera dan pengaturan pengambilan gambar.',
@@ -47,14 +47,25 @@ class ListMateriSeeder extends Seeder
                 'author' => 'Diana Brown'
             ],
             [
-                'KD_bulan' => 5,
+                'KD_bulan' => 1,
                 'kode_materi' => 'D005',
+                'judul' => 'Editing Video dengan Adobe Premiere Pro',
+                'deskripsi' => 'Materi ini membahas teknik dasar pengeditan video menggunakan Adobe Premiere Pro.',
+                'kode_youtube' => '0480Rrzy8Xs',
+                'author' => 'Edward Wilson'
+            ],
+            [
+                'KD_bulan' => 1,
+                'kode_materi' => 'D006',
                 'judul' => 'Editing Video dengan Adobe Premiere Pro',
                 'deskripsi' => 'Materi ini membahas teknik dasar pengeditan video menggunakan Adobe Premiere Pro.',
                 'kode_youtube' => '0480Rrzy8Xs',
                 'author' => 'Edward Wilson'
             ]
         ];
+        
+    
+        
         
 
             List_Materi::insert($data);

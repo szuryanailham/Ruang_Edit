@@ -14,8 +14,8 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/Components/shadcn/ui/dropdown-menu";
-
 import { Link } from "@inertiajs/react";
+
 const NavBox: React.FC = () => {
     const [active, setActive] = useState<boolean>(false);
     const navbar = useRef<HTMLDivElement>(null);

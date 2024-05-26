@@ -22,6 +22,7 @@ class ListMateriController extends Controller
         return Inertia::render('Dashboard/DetailMateri', [
             'title' => "Detail Materi",
             'Detail_materi' => $DetailMateriResource
+            
         ]);
     }
 
