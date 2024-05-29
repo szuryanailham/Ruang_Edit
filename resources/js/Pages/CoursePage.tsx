@@ -25,7 +25,7 @@ const CoursePage: React.FC<AboutPageProps> = ({ user }) => {
             <NavBox />
             <section className=" h-fit w-full p-3 mb-[5%]">
                 <InputCourse />
-                <div className="mt-7 flex flex-col gap-5 md:flex-row flex-wrap  items-center">
+                <div className="w-full mt-7 lg:mx-auto flex flex-col gap-5 md:flex-row flex-wrap items-center lg:px-10">
                     {/* card 1 */}
                     <CardCourse
                         image="/img/card_course_img.svg"
@@ -47,6 +47,28 @@ const CoursePage: React.FC<AboutPageProps> = ({ user }) => {
                         member={50}
                     />
                     {/* end card 2 */}
+
+                    {/* card 3 */}
+                    <CardCourse
+                        image="/img/card_course_img2.svg"
+                        category="design"
+                        title="Class Grading with Lightroom"
+                        rating={4.5}
+                        course={7}
+                        member={50}
+                    />
+                    {/* end card 3 */}
+
+                    {/* card 3 */}
+                    <CardCourse
+                        image="/img/card_course_img2.svg"
+                        category="design"
+                        title="Class Grading with Lightroom"
+                        rating={4.5}
+                        course={7}
+                        member={50}
+                    />
+                    {/* end card 3 */}
 
                     {/* card 3 */}
                     <CardCourse

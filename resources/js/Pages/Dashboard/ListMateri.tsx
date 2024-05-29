@@ -77,39 +77,47 @@ const ListMateri: React.FC<Datatype> = ({
                     </div>
                 ))}
             </div>
-            <Pagination>
-                <PaginationContent>
-                    {/* previous */}
-                    <PaginationItem>
-                        <PaginationPrevious href={Links.prev_page_url || ""} />
-                    </PaginationItem>
-                    {/* numbrt */}
-                    <Pagination>
-                        <PaginationContent>
-                            {linksArray.map((item: string, index: number) => (
-                                <PaginationItem key={index}>
-                                    <PaginationLink
-                                        href={item}
-                                        className={`px-3 py-1 hover:bg-black hover:text-white text-white-700 rounded-md ${
-                                            item === url
-                                                ? "bg-black text-white"
-                                                : "bg-transparent"
-                                        }`}
-                                    >
-                                        {index + 1}
-                                    </PaginationLink>
-                                </PaginationItem>
-                            ))}
-                        </PaginationContent>
-                    </Pagination>
+            {materi.length == 0 ? (
+                " "
+            ) : (
+                <Pagination>
+                    <PaginationContent>
+                        {/* previous */}
+                        <PaginationItem>
+                            <PaginationPrevious
+                                href={Links.prev_page_url || ""}
+                            />
+                        </PaginationItem>
+                        {/* numbrt */}
+                        <Pagination>
+                            <PaginationContent>
+                                {linksArray.map(
+                                    (item: string, index: number) => (
+                                        <PaginationItem key={index}>
+                                            <PaginationLink
+                                                href={item}
+                                                className={`px-3 py-1 hover:bg-black hover:text-white text-white-700 rounded-md ${
+                                                    item === url
+                                                        ? "bg-black text-white"
+                                                        : "bg-transparent"
+                                                }`}
+                                            >
+                                                {index + 1}
+                                            </PaginationLink>
+                                        </PaginationItem>
+                                    )
+                                )}
+                            </PaginationContent>
+                        </Pagination>
 
-                    {/* end numvber */}
-                    <PaginationItem>
-                        {/* next  */}
-                        <PaginationNext href={Links.next_page_url || ""} />
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
+                        {/* end numvber */}
+                        <PaginationItem>
+                            {/* next  */}
+                            <PaginationNext href={Links.next_page_url || ""} />
+                        </PaginationItem>
+                    </PaginationContent>
+                </Pagination>
+            )}
         </div>
     );
 };

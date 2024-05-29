@@ -14,10 +14,33 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/Components/shadcn/ui/dropdown-menu";
-import { Link } from "@inertiajs/react";
+import {
+    Menubar,
+    MenubarContent,
+    MenubarItem,
+    MenubarMenu,
+    MenubarSeparator,
+    MenubarShortcut,
+    MenubarTrigger,
+} from "@/Components/shadcn/ui/menubar";
+import { Link, usePage } from "@inertiajs/react";
+import { PageProps } from "@/types";
+import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+} from "@/Components/shadcn/ui/avatar";
 
 const NavBox: React.FC = () => {
     const [active, setActive] = useState<boolean>(false);
+    const { auth } = usePage<PageProps>().props;
+    console.log(auth.user);
+    // if (!auth.user) {
+    //     console.log("belum login");
+    // } else {
+    //     console.log("sudah login");
+    // }
+    console.log;
     const navbar = useRef<HTMLDivElement>(null);
     const sidebar = useRef<HTMLDivElement>(null);
     const closeButton = useRef<HTMLButtonElement>(null);
@@ -136,7 +159,7 @@ const NavBox: React.FC = () => {
                                         <DropdownMenuItem>
                                             <Link
                                                 href="/class"
-                                                className="block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
+                                                className=" w-full block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
                                             >
                                                 Class
                                             </Link>
@@ -144,7 +167,7 @@ const NavBox: React.FC = () => {
                                         <DropdownMenuItem>
                                             <Link
                                                 href="/mentor"
-                                                className="block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
+                                                className=" w-full block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
                                             >
                                                 Mentor
                                             </Link>
@@ -181,14 +204,57 @@ const NavBox: React.FC = () => {
                             </li>
                             {/* LOGIN */}
                             <li>
-                                <Button className="bg-BaseColor2">
-                                    <Link
-                                        href="/login"
-                                        className="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 p-3"
-                                    >
-                                        Login
-                                    </Link>
-                                </Button>
+                                {!auth.user ? (
+                                    <Button className="bg-BaseColor2">
+                                        <Link
+                                            href="/login"
+                                            className="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 p-3"
+                                        >
+                                            Login
+                                        </Link>
+                                    </Button>
+                                ) : (
+                                    <Menubar>
+                                        <MenubarMenu>
+                                            <MenubarTrigger className="flex flex-row gap-3">
+                                                <Avatar className="order-last">
+                                                    <AvatarImage src="https://github.com/shadcn.png" />
+                                                    <AvatarFallback>
+                                                        CN
+                                                    </AvatarFallback>
+                                                </Avatar>
+                                                <p className="order-2 font-semibold">
+                                                    {auth.user.name}
+                                                </p>
+                                            </MenubarTrigger>
+                                            <MenubarContent>
+                                                <MenubarItem>
+                                                    <Link
+                                                        className="w-full text-sm "
+                                                        href="/dashboard"
+                                                    >
+                                                        Dashboard
+                                                    </Link>
+                                                </MenubarItem>
+                                                <MenubarSeparator />
+                                                <MenubarItem>
+                                                    Edit Profile
+                                                </MenubarItem>
+                                                <MenubarSeparator />
+                                                <MenubarItem>
+                                                    <Link
+                                                        className="w-full text-sm font-bold text-red-600"
+                                                        href={route("logout")}
+                                                        method="post" // Use Inertia's method prop for proper form handling
+                                                        as="button" // Renders as a button to support POST method
+                                                    >
+                                                        Logout
+                                                    </Link>
+                                                </MenubarItem>
+                                            </MenubarContent>
+                                        </MenubarMenu>
+                                    </Menubar>
+                                )}
                             </li>
                             {/* SIGN UP */}
                         </ul>

@@ -17,7 +17,7 @@ const CardEvent: FC<ChildProps> = ({
     location,
 }): ReactElement => {
     return (
-        <Card className="shadow-xl mb-3">
+        <Card className="md:w-[48%] lg:w-[30%] md:h-[20%] shadow-xl mb-3">
             <CardHeader>
                 <div
                     style={{ backgroundImage: `url('${image}')` }}

@@ -18,7 +18,7 @@ const CardWabiner: FC<ChildProps> = ({
     link,
 }): ReactElement => {
     return (
-        <Card className="shadow-xl mb-3">
+        <Card className="shadow-xl mb-3 md:w-[48%] lg:w-[30%]">
             <CardHeader>
                 <div
                     style={{ backgroundImage: `url('${image}')` }}

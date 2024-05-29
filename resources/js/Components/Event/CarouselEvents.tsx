@@ -19,7 +19,7 @@ const CarouselEvents = () => {
     return (
         <div>
             <Carousel
-                className="w-full max-w-xs m-auto"
+                className="w-full max-w-xs md:max-w-md lg:max-w-xl m-auto"
                 opts={{
                     align: "start",
                 }}
@@ -29,7 +29,7 @@ const CarouselEvents = () => {
                     }),
                 ]}
             >
-                <CarouselContent className="">
+                <CarouselContent className="w-full">
                     {UrlImage.map((events, index) => (
                         <CarouselItem key={index}>
                             <div className="p-1">

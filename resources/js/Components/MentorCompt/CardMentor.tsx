@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/react";
 const CardMentor: React.FC = () => {
     return (
         <Link href="/detailMentor">
-            <Card className="w-full md:w-[330px] mb-5">
+            <Card className="w-full md:w-[330px] lg:w-[280px] mb-5">
                 <CardHeader>
                     <div
                         style={{

@@ -18,13 +18,11 @@ return new class extends Migration
             // bidang
             $table->enum('Bidang', ['Design', 'Photographer', 'Videographer'])->default('Design');
             // is admin
-            $table->boolean('isAdmin');
-            // access
-            $table->boolean('access');
-            // no telpon
-            $table->string('no_telpon');
-            // Alamat
-            $table->text('alamat');
+            // $table->boolean('isAdmin')->default(false);
+            // $table->boolean('access')->default(true);
+
+            // $table->string('no_telpon')->nullable()->change();
+            // $table->text('alamat')->nullable()->change();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

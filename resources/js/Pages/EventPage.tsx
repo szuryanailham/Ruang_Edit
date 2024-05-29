@@ -30,12 +30,17 @@ const EventPage: React.FC<Props> = ({ user }) => {
                 {/* END TITLE  */}
 
                 {/* CAROUSEL  */}
-                <div>
-                    <CarouselEvents />
-                    <p className="p-3 text-center">
-                        <TextEvents />
-                    </p>
+                <div className="flex flex-col md:flex-row md:mt-5 md:p-5">
+                    <div className="md:w-1/2 lg:[60%]">
+                        <CarouselEvents />
+                    </div>
+                    <div className="md:w-[50%] lg:w-[40%] md:p-5">
+                        <p className="p-5 md:p-0">
+                            <TextEvents />
+                        </p>
+                    </div>
                 </div>
+
                 {/* END CAROUSEL */}
 
                 {/* card Events */}
@@ -45,7 +50,25 @@ const EventPage: React.FC<Props> = ({ user }) => {
                     </h1>
                     <p className="text-colorfont italic">will comming soon</p>
                 </div>
-                <div className=" p-4">
+                <div className="flex flex-col flex-wrap md:flex-row gap-5 p-4 md:p-10 md:px-10 mx-auto item-center">
+                    <CardEvent
+                        date={new Date(2024, 0, 22)}
+                        location="Yogyakarta,Indonesia"
+                        image="/img/mentor-dummy.svg"
+                        description={
+                            "       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, tempora assumenda. Libero ipsa corporis id magnam illo quibusdam, repudiandae minima."
+                        }
+                        title="Event of ruang Edit"
+                    />
+                    <CardEvent
+                        date={new Date(2024, 0, 22)}
+                        location="Yogyakarta,Indonesia"
+                        image="/img/mentor-dummy.svg"
+                        description={
+                            "       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, tempora assumenda. Libero ipsa corporis id magnam illo quibusdam, repudiandae minima."
+                        }
+                        title="Event of ruang Edit"
+                    />
                     <CardEvent
                         date={new Date(2024, 0, 22)}
                         location="Yogyakarta,Indonesia"
