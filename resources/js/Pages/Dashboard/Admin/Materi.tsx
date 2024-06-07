@@ -13,12 +13,35 @@ interface Materi {
     deskripsi: string;
 }
 
+interface PaginationLink {
+    url: string | null;
+    label: string;
+    active: boolean;
+}
+
+interface PaginationData {
+    data: Materi[];
+    first_page_url: string;
+    from: number;
+    last_page: number;
+    last_page_url: string;
+    links: PaginationLink[];
+    next_page_url: string | null;
+    path: string;
+    per_page: number;
+    prev_page_url: string | null;
+    to: number;
+    total: number;
+    current_page: number;
+}
+
 interface Datatype {
     title: string;
     materi: Materi[];
+    pagination: PaginationData;
 }
 
-const ListEditMateri: React.FC<Datatype> = ({ title, materi }) => {
+const ListEditMateri: React.FC<Datatype> = ({ title, materi, pagination }) => {
     const { delete: destroy } = useForm();
     const handleDelete = (id: number) => {
         if (confirm("Are you sure you want to delete this item?")) {
@@ -74,6 +97,37 @@ const ListEditMateri: React.FC<Datatype> = ({ title, materi }) => {
                         </div>
                     ))}
                 </div>
+                {materi.length !== 0 ? (
+                    <div className="w-full flex items-center mt-10">
+                        <div className="pagination mx-auto">
+                            {pagination.links.map((data, index) => {
+                                return (
+                                    <Link
+                                        key={index}
+                                        href={data.url || ""}
+                                        className={`px-3 py-1 hover:bg-BaseColor text-white-700 rounded-md ${
+                                            data.active ? "bg-BaseColor" : ""
+                                        }`}
+                                    >
+                                        {data.label === "&laquo; Previous"
+                                            ? "«"
+                                            : data.label === "Next &raquo;"
+                                            ? "»"
+                                            : data.label}
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </div>
+                ) : (
+                    <div>
+                        <img
+                            className="md:w-1/2 mx-auto"
+                            src="/img/empty.jpg"
+                            alt="Error animation"
+                        />
+                    </div>
+                )}
             </div>
         </>
     );

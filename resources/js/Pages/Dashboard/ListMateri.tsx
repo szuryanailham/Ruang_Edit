@@ -42,7 +42,7 @@ const ListMateri: React.FC<Datatype> = ({ title, materi, pagination }) => {
     return (
         <div className="p-4 sm:ml-64">
             <Navbar />
-            <h1 className="text-2xl font-bold mb-4 text-center mt-3">
+            <h1 className="text-2xl font-bold mb-4 text-center mt-10">
                 {title}
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -63,29 +63,37 @@ const ListMateri: React.FC<Datatype> = ({ title, materi, pagination }) => {
                     </div>
                 ))}
             </div>
-            {/* Pagination */}
-            <div className="w-full flex items-center mt-10">
-                <div className="pagination mx-auto">
-                    {pagination.links.map((data, index) => {
-                        return (
-                            <Link
-                                key={index}
-                                href={data.url || ""}
-                                className={`px-3 py-1 hover:bg-BaseColor text-white-700 rounded-md ${
-                                    data.active ? "bg-BaseColor" : ""
-                                }`}
-                            >
-                                {data.label === "&laquo; Previous"
-                                    ? "«"
-                                    : data.label === "Next &raquo;"
-                                    ? "»"
-                                    : data.label}
-                            </Link>
-                        );
-                    })}
+            {materi.length !== 0 ? (
+                <div className="w-full flex items-center mt-10">
+                    <div className="pagination mx-auto">
+                        {pagination.links.map((data, index) => {
+                            return (
+                                <Link
+                                    key={index}
+                                    href={data.url || ""}
+                                    className={`px-3 py-1 hover:bg-BaseColor text-white-700 rounded-md ${
+                                        data.active ? "bg-BaseColor" : ""
+                                    }`}
+                                >
+                                    {data.label === "&laquo; Previous"
+                                        ? "«"
+                                        : data.label === "Next &raquo;"
+                                        ? "»"
+                                        : data.label}
+                                </Link>
+                            );
+                        })}
+                    </div>
                 </div>
-            </div>
-            {/* end of pagination */}
+            ) : (
+                <div>
+                    <img
+                        className="md:w-1/2 mx-auto"
+                        src="/img/empty.jpg"
+                        alt="Error animation"
+                    />
+                </div>
+            )}
         </div>
     );
 };

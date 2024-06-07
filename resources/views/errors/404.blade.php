@@ -19,18 +19,19 @@
         .container {
             text-align: center;
             background: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin: 0 10px;
         }
         h1 {
-            font-size: 5em;
-            margin: 0;
-            margin-bottom: 10px;
+            font-size: 4em;
+            margin: 0 0 10px;
             color: #FF6B6B;
         }
         p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin-bottom: 20px;
             color: #777;
         }
@@ -50,17 +51,25 @@
             transform: translateY(-2px);
         }
         img {
-            max-width: 100%;
+            max-width: 70%;
             height: auto;
             margin-bottom: 20px;
             border-radius: 10px;
+            margin-top: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Media queries for larger screens */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 50%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="/img/error.gif" alt="Error animation">
+        <img src="/img/404.jpg" alt="Error animation">
         <h1>404</h1>
         <p>Oops... your page is not found!</p>
         <a href="{{ url('/') }}">Go to Homepage</a>
