@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import React, { useState, useRef, useEffect } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaBook } from "react-icons/fa";
@@ -9,7 +9,25 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { BsPeopleFill } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 
+interface User {
+    id: number;
+    name: string;
+    email: string;
+    role: string;
+    emailVerifiedAt: string;
+}
+
+interface AuthProps {
+    user: User;
+}
+
+interface CustomPageProps {
+    auth: AuthProps;
+    [key: string]: any;
+}
 function SidebarDashboard() {
+    const { props } = usePage<CustomPageProps>();
+    const isAdmin = props.auth.user;
     const [isOpen, setIsOpen] = useState(true);
     const sidebarRef = useRef(null);
     const btnActive = () => {
@@ -119,31 +137,35 @@ function SidebarDashboard() {
                                     </span>
                                 </Link>
                             </li>
-
-                            {/* EDIT MATERI */}
-                            <li>
-                                <Link
-                                    href="/admin/list-bulan"
-                                    className=" flex  items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group hover:text-black"
-                                >
-                                    <FaEdit className="text-2xl" />
-                                    <span className="flex-1 ms-3 whitespace-nowrap">
-                                        Edit Materi
-                                    </span>
-                                </Link>
-                            </li>
-                            {/* EDIT MEMBER */}
-                            <li>
-                                <Link
-                                    href="/admin/edit-member"
-                                    className=" flex  items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group hover:text-black"
-                                >
-                                    <BsPeopleFill className="text-2xl" />
-                                    <span className="flex-1 ms-3 whitespace-nowrap">
-                                        Edit Member
-                                    </span>
-                                </Link>
-                            </li>
+                            {isAdmin.role !== "member" ? (
+                                <>
+                                    <li>
+                                        <Link
+                                            href="/admin/list-bulan"
+                                            className=" flex  items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group hover:text-black"
+                                        >
+                                            <FaEdit className="text-2xl" />
+                                            <span className="flex-1 ms-3 whitespace-nowrap">
+                                                Edit Materi
+                                            </span>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/admin/edit-member"
+                                            className=" flex  items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group hover:text-black"
+                                        >
+                                            <BsPeopleFill className="text-2xl" />
+                                            <span className="flex-1 ms-3 whitespace-nowrap">
+                                                Edit Member
+                                            </span>
+                                        </Link>
+                                    </li>
+                                </>
+                            ) : (
+                                // edit
+                                ""
+                            )}
 
                             {/* LOGOUT */}
                             <li className="mt-[30%]"></li>

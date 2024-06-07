@@ -1,9 +1,7 @@
 import Navbar from "@/Components/Dashboard/Navbar";
-import React from "react";
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
     TableHead,
     TableHeader,
@@ -12,17 +10,7 @@ import {
 import { Checkbox } from "@/Components/shadcn/ui/checkbox";
 import { Button } from "@/Components/shadcn/ui/button";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import { useForm } from "@inertiajs/react";
-import {
-    Pagination,
-    PaginationContent,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-} from "@/Components/shadcn/ui/pagination";
-
+import { Link, useForm } from "@inertiajs/react";
 interface Member {
     id: number;
     name: string;
@@ -39,7 +27,7 @@ interface PaginationData {
     from: number;
     last_page: number;
     last_page_url: string;
-    links: [url: string | null, label: string, active: boolean];
+    links: { url: string | null; label: string; active: boolean }[];
     next_page_url: string | null;
     path: string;
     per_page: number;
@@ -53,17 +41,38 @@ interface PaginationData {
 
 interface Props {
     member: PaginationData;
-    paginator: Member[];
+    isAdmin: boolean;
+    data: Member[];
 }
 
-const AllMember: React.FC<Props> = ({ member, paginator }) => {
-    const page = member.links;
-    const dataMember = member.data;
-    const linksArray = Object.values(paginator[0]);
-    console.log(linksArray);
-    const activeLink = page.find((link: any) => link.active === true);
-    const url = activeLink ? activeLink.url : "";
-    const { delete: destroy } = useForm();
+const AllMember: React.FC<Props> = ({ member }) => {
+    console.log(member);
+    const {
+        data,
+        setData,
+        delete: destroy,
+    } = useForm({
+        members: member.data.map((m) => ({ id: m.id, isChecked: m.isAdmin })),
+    });
+
+    // const handleCheckboxChange = (index: number) => {
+    //     const updatedMembers = data.members.map((item, idx) =>
+    //         idx === index ? { ...item, isChecked: !item.isChecked } : item
+    //     );
+    //     setData("members", updatedMembers);
+
+    //     const memberId = member.data[index].id;
+    //     const statusChecked = updatedMembers[memberId].isChecked;
+
+    //     put(`/members/${memberId}/update-checkbox`, {
+    //         preserveScroll: true,
+    //         preserveState: true,
+    //         data: { statusChecked },
+    //         onSuccess: () => {
+    //             console.log("Checkbox updated successfully");
+    //         },
+    //     });
+    // };
     const handleDeleteMember = (id: number) => {
         if (confirm("Are you sure you want to delete this user?")) {
             destroy(route("admin.edit-member.destroy", { edit_member: id }), {
@@ -71,11 +80,12 @@ const AllMember: React.FC<Props> = ({ member, paginator }) => {
                     alert("User deleted successfully");
                 },
                 onError: () => {
-                    alert("materi failed to delete");
+                    alert("Failed to delete user");
                 },
             });
         }
     };
+
     return (
         <>
             <Navbar />
@@ -121,7 +131,7 @@ const AllMember: React.FC<Props> = ({ member, paginator }) => {
                                 (element: Member, index: number) => (
                                     <TableRow key={index}>
                                         <TableCell className="font-medium">
-                                            {index + 1}
+                                            {element.id}
                                         </TableCell>
                                         <TableCell className="text-center">
                                             {element.name}
@@ -131,10 +141,10 @@ const AllMember: React.FC<Props> = ({ member, paginator }) => {
                                         </TableCell>
                                         <TableCell>{element.Bidang}</TableCell>
                                         <TableCell className="text-center">
-                                            <Checkbox />
+                                            <Checkbox disabled />
                                         </TableCell>
                                         <TableCell className="text-center">
-                                            <Checkbox />
+                                            <Checkbox disabled />
                                         </TableCell>
                                         <TableCell className="text-center">
                                             {element.no_telpon}
@@ -160,32 +170,28 @@ const AllMember: React.FC<Props> = ({ member, paginator }) => {
                         </TableBody>
                     </Table>
                 </div>
-                <Pagination>
-                    <PaginationContent>
-                        <PaginationItem>
-                            <PaginationPrevious
-                                href={member.prev_page_url || ""}
-                            />
-                        </PaginationItem>
-                        {linksArray.map((item: string, index: number) => (
-                            <PaginationItem key={index}>
-                                <PaginationLink
-                                    href={item}
-                                    className={`px-3 py-1 hover:bg-black hover:text-white text-white-700 rounded-md ${
-                                        item === url
-                                            ? "bg-black text-white"
-                                            : "bg-transparent"
+
+                <div className="w-full flex items-center mt-10">
+                    <div className="pagination mx-auto">
+                        {member.links.map((data, index) => {
+                            return (
+                                <Link
+                                    key={index}
+                                    href={data.url || ""}
+                                    className={`px-3 py-1 hover:bg-BaseColor text-white-700 rounded-md ${
+                                        data.active ? "bg-BaseColor" : ""
                                     }`}
                                 >
-                                    {index + 1}
-                                </PaginationLink>
-                            </PaginationItem>
-                        ))}
-                        <PaginationItem>
-                            <PaginationNext href={member.next_page_url || ""} />
-                        </PaginationItem>
-                    </PaginationContent>
-                </Pagination>
+                                    {data.label === "&laquo; Previous"
+                                        ? "«"
+                                        : data.label === "Next &raquo;"
+                                        ? "»"
+                                        : data.label}
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
         </>
     );

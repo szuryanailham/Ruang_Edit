@@ -9,7 +9,7 @@ const WabinerPage: React.FC = () => {
             <NavBox />
             <div className=" h-fit w-full p-5 mb-[150px]">
                 <InputWabiner />
-                <div className="flex flex-wrap flex-col md:flex-row mt-2 md:mt-10 gap-4 lg:px-5">
+                <div className="flex flex-wrap flex-col md:flex-row mt-2 md:mt-10 gap-4 lg:px-10">
                     <CardWabiner
                         date={new Date(2024, 0, 22)}
                         link="https://ruangedit.com/"

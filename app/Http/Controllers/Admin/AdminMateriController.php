@@ -13,7 +13,7 @@ use App\Models\List_Materi;
 // Request
 use App\Http\Requests\MateriRequest;
 use App\Http\Requests\UpdateMateriRequest;
-
+use App\Models\User;
 
 class AdminMateriController extends Controller
 {
@@ -26,6 +26,18 @@ class AdminMateriController extends Controller
             'title' => "List Materi perbulan",
             'Months' => Month_Materi::all(),
         ]);
+    }
+
+    public function updateCheckbox($id, Request $request)
+    {
+        $request->validate([
+            'members' => 'required|array',
+            'members.*.id' => 'required|integer|exists:users,id',
+            'members.*.isChecked' => 'required|boolean',
+        ]);
+        $statusChecked = $request->members;
+        dd($statusChecked);
+        return response()->json(['success' => true]);
     }
 
     /**

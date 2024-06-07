@@ -28,12 +28,10 @@ class MonthMateriController extends Controller
     {
         $materi = List_Materi::where('KD_bulan', $month_Materi->id)->paginate(5);
         $materiResource = ListMateriResource::collection($materi)->resolve();
-        $link = $materi->links();
         return Inertia::render('Dashboard/ListMateri', [
             'title' => "daftar materi ". $month_Materi->nama_bulan,
             'materi' => $materiResource,
-            'Links' => $link->paginator,
-            'paginator' => $link->elements
+            'pagination' => $materi
         ]);
     }
 

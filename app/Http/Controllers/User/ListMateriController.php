@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\List_Materi;
-use App\Http\Requests\StoreList_MateriRequest;
-use App\Http\Requests\UpdateList_MateriRequest;
 use App\Http\Resources\ListMateriResource;
-use App\Models\Month_Materi;
 use Inertia\Inertia;
 
 

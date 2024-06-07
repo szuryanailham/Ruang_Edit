@@ -13,12 +13,9 @@ class EditMemberController extends Controller
     public function index()
     {
         $members = User::paginate(10);
-        $link = $members->links();
         return Inertia::render('Dashboard/Admin/AllMember', [
             'title' => "List Materi perbulan",
             'member' => $members,
-            'Links' => $link->paginator,
-            'paginator' => $link->elements
         ]);
     }
 
