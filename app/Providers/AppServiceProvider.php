@@ -26,5 +26,7 @@ class AppServiceProvider extends ServiceProvider
             return in_array($user->role, ['admin', 'super_admin']);
         });
         
+          // Tambahkan middleware di sini
+          $this->app['router']->aliasMiddleware('upgradeToHttps', \App\Http\Middleware\UpgradeToHttpsUnderNgrok::class);
     }
 }

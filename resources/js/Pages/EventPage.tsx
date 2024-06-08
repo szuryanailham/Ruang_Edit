@@ -3,14 +3,6 @@ import CarouselEvents from "@/Components/Event/CarouselEvents";
 import { TextEvents } from "@/Components/Event/TextEvents";
 import Footer from "@/Components/Home/Footer/Footer";
 import NavBox from "@/Components/Home/Nav/NavBox";
-import { Card, CardContent } from "@/Components/shadcn/ui/card";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/Components/shadcn/ui/carousel";
 import React from "react";
 import { User } from "@/types";
 

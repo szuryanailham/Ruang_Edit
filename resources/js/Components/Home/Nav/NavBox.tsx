@@ -111,7 +111,7 @@ const NavBox: React.FC = () => {
                         <img
                             src="/img/Logo.svg"
                             className="h-10 w-12 md:h-12 md:w-[50px]"
-                            alt="Flowbite Logo"
+                            alt="Ruang Edit Logo"
                         />
                         <span className="text-xs font-semibold whitespace-nowrap text-wrap text-white md:text-black leading-4 w-10 md:text-x md:leading-2">
                             Ruang Edit

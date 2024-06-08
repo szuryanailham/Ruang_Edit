@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/Components/shadcn/ui/card";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/Components/shadcn/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+// import {
+//     Carousel,
+//     CarouselContent,
+//     CarouselItem,
+//     CarouselNext,
+//     CarouselPrevious,
+// } from "@/Components/shadcn/ui/carousel";
+// import Autoplay from "embla-carousel-autoplay";
 const CarouselEvents = () => {
     interface ImageItem {
         url: string;
@@ -18,7 +18,7 @@ const CarouselEvents = () => {
     ];
     return (
         <div>
-            <Carousel
+            {/* <Carousel
                 className="w-full max-w-xs md:max-w-md lg:max-w-xl m-auto"
                 opts={{
                     align: "start",
@@ -53,7 +53,7 @@ const CarouselEvents = () => {
                     <CarouselPrevious />
                     <CarouselNext />
                 </div>
-            </Carousel>
+            </Carousel> */}
         </div>
     );
 };

@@ -1,27 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import CardTestimony from "./CardTestimony";
-import Autoplay from "embla-carousel-autoplay";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/Components/shadcn/ui/carousel";
 
 export default function Slider() {
     const carouselRef = useRef(null);
 
-    useEffect(() => {
-        if (carouselRef.current) {
-            const autoplay = Autoplay(carouselRef.current);
-            return autoplay.stop;
-        }
-    }, []);
-
     return (
         <div>
-            <Carousel
+            <h1>Shadcn</h1>
+            {/* <Carousel
                 ref={carouselRef}
                 opts={{
                     align: "start",
@@ -47,7 +33,7 @@ export default function Slider() {
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
-            </Carousel>
+            </Carousel> */}
         </div>
     );
 }

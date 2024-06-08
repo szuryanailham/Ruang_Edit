@@ -1,28 +1,21 @@
 import React from "react";
 import { Card, CardContent } from "@/Components/shadcn/ui/card";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-    type CarouselApi,
-} from "@/Components/shadcn/ui/carousel";
+
 import { ImageRegional } from "./ImageRegional";
-import Autoplay from "embla-carousel-autoplay";
 const GalleryAbout: React.FC = () => {
     return (
         <div className="mt-5">
-            <Carousel
+            <h1>HALLOAS</h1>
+            {/* <Carousel
                 className="w-full max-w-xs mx-auto rounded-lg"
                 opts={{
                     align: "start",
                 }}
-                plugins={[
-                    Autoplay({
-                        delay: 2500,
-                    }),
-                ]}
+                // plugins={[
+                //     Autoplay({
+                //         delay: 2500,
+                //     }),
+                // ]}
             >
                 <CarouselContent>
                     {ImageRegional().map((item) => (
@@ -44,7 +37,7 @@ const GalleryAbout: React.FC = () => {
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
-            </Carousel>
+            </Carousel> */}
         </div>
     );
 };

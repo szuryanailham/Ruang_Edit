@@ -3,6 +3,8 @@ import { title, secondText, benefitRuangEdit } from "./Text";
 import { Button } from "../../shadcn/ui/button";
 import { FaCirclePlay, FaRegBookmark } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
+import headerImage from "@/image/Home/Header-Home.svg";
+import AboutImage from "@/image/Home/Header-About.svg";
 const Header: React.FC = () => {
     interface Benefit {
         img: string;
@@ -18,7 +20,7 @@ const Header: React.FC = () => {
                 <div className="lg:order-last">
                     <img
                         className="mt-7 w-[330px] md:w-[550px] lg:w-[650px] lg:p-3 "
-                        src="/img/header/header-mobile.svg"
+                        src={headerImage}
                         alt="Header Image"
                     />
                 </div>
@@ -90,7 +92,7 @@ const Header: React.FC = () => {
                     <div className="flex flex-col items-center md:mb-5 lg:w-[55%]">
                         <img
                             className="m-auto w-[330px] md:w-[450px] lg:w-[500px]"
-                            src="/img/header/header_image.svg"
+                            src={AboutImage}
                             alt="Header Image"
                         />
                     </div>
