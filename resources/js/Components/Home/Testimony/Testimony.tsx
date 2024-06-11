@@ -1,6 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import { TextTestiomony } from "./Text";
-import Carousel from "./Carousel";
+import Carousel from "./Slider";
+import Slider from "./Slider";
 const Testimony: React.FC = () => {
     return (
         <div className="bg-BaseColor p-5 flex flex-col items-center md:p-7 lg:p-10 ">
@@ -11,7 +12,7 @@ const Testimony: React.FC = () => {
                 {TextTestiomony()}
             </p>
             <div className="mt-7">
-                <Carousel />
+                <Slider />
             </div>
         </div>
     );
