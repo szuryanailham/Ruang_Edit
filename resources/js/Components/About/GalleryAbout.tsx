@@ -1,43 +1,53 @@
 import React from "react";
 import { Card, CardContent } from "@/Components/shadcn/ui/card";
-
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/Components/shadcn/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { ImageRegional } from "./ImageRegional";
+interface dataType {
+    id: number;
+    name: string;
+    image: string;
+}
 const GalleryAbout: React.FC = () => {
+    console.log(ImageRegional());
     return (
         <div className="mt-5">
-            <h1>HALLOAS</h1>
-            {/* <Carousel
-                className="w-full max-w-xs mx-auto rounded-lg"
-                opts={{
-                    align: "start",
-                }}
-                // plugins={[
-                //     Autoplay({
-                //         delay: 2500,
-                //     }),
-                // ]}
+            <Carousel
+                plugins={[
+                    Autoplay({
+                        delay: 2000,
+                    }),
+                ]}
+                className="w-full mx-auto"
             >
                 <CarouselContent>
-                    {ImageRegional().map((item) => (
-                        <CarouselItem key={item.id}>
-                            <Card>
-                                <CardContent
-                                    className="flex aspect-square items-center justify-center bg-cover bg-center relative"
-                                    style={{
-                                        backgroundImage: `url(${item.img})`,
-                                    }}
-                                >
-                                    <span className="absolute bottom-0 left-0 right-0 px-2 py-1 bg-black bg-opacity-50 text-white text-center text-sm">
-                                        {item.name}
-                                    </span>
-                                </CardContent>
-                            </Card>
+                    {ImageRegional().map((item, index) => (
+                        <CarouselItem
+                            key={index}
+                            className="md:basis-1/2 lg:basis-1/3"
+                        >
+                            <div className="p-1">
+                                <Card>
+                                    <CardContent
+                                        className="flex aspect-square items-center justify-center p-6 bg-cover bg-center"
+                                        style={{
+                                            backgroundImage: `url(${item.img})`,
+                                        }}
+                                    ></CardContent>
+                                </Card>
+                            </div>
                         </CarouselItem>
                     ))}
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
-            </Carousel> */}
+            </Carousel>
         </div>
     );
 };

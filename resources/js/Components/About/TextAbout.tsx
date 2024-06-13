@@ -1,3 +1,3 @@
 export const TextAbout = () => {
-    return "Lorem ipsum dolor sit amet,  elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis posuere morbi leo urna molestie. Sit amet est placerat in.";
+    return "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestias, ea, maxime eligendi rem officiis laudantium minima, asperiores quisquam sed itaque nemo illum suscipit laboriosam ad quae voluptates? Necessitatibus sint nisi rem deleniti at commodi aut libero. Expedita laudantium cum tempore qui atque obcaecati inventore magni, voluptates nesciunt accusantium nisi?";
 };

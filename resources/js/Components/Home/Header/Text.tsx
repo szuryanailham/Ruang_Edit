@@ -4,7 +4,7 @@ export const title = () => {
 };
 
 export const secondText = () => {
-    return "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis posuere morbi leo urna molestie. Sit amet est placerat in.";
+    return "Mari mulai perjalanan Anda menuju pengembangan keterampilan yang lebih baik dan temukan berbagai kursus menarik yang kami tawarkan. Jelajahi, belajar, dan tumbuh bersama Ruang Edit. Selamat belajar!";
 };
 
 export const benefitRuangEdit = () => {
