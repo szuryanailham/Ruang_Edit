@@ -24,7 +24,7 @@ const CardCourse: React.FC<CardCourseProps> = ({
 }) => {
     return (
         <Link href="/detailCourse">
-            <Card className="w-[280px] md:w-[250px] lg:w-[250px] mb-5">
+            <Card className="w-[280px] md:w-[245px] lg:w-[250px] mb-5">
                 <CardHeader
                     style={{ backgroundImage: `url('${image}')` }}
                     className="w-full bg-no-repeat h-[150px] md:h-[170px] bg-cover rounded-t-lg"

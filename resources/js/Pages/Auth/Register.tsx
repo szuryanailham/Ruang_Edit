@@ -43,13 +43,15 @@ export default function Register() {
 
                     {/* TITLE */}
                     <div className="mb-5 w-full lg:w-1/2 lg:px-10">
-                        <h1 className="text-2xl font-bold mb-1 text-center">
-                            Sign Up
-                        </h1>
-                        <p className="leading-5 text-center">
-                            Today is a new day. It's your day. You shape it.
-                            Sign in to start managing your projects.
-                        </p>
+                        <div className="mb-5 p-2 md:text-center">
+                            <h1 className="text-2xl font-bold mb-1 text-center">
+                                Sign up
+                            </h1>
+                            <p className="leading-5 p-2 text-md lg:mx-auto text-wrap w-full text-center">
+                                Silakan buat akun Anda untuk melanjutkan
+                                perjalanan kreatif Anda bersama Ruang Edit.
+                            </p>
+                        </div>
                         <form className="space-y-4" onSubmit={submit}>
                             {/* NAME TITLE INPUT  */}
                             <div>

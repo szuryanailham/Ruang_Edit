@@ -11,27 +11,27 @@ export const benefitRuangEdit = () => {
     const dataBenefit = [
         {
             img: "/img/Benefit/Toga.svg",
-            title: "Online degree",
+            title: "Kursus Online",
             deskripsi:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
+                "Akses ke berbagai kursus online yang dirancang untuk meningkatkan keterampilan editing Anda dengan cepat dan efektif.",
         },
         {
             img: "/img/Benefit/Book.svg",
-            title: "Short Courses",
+            title: "Akses Materi Eksklusif",
             deskripsi:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
+                "Nikmati akses ke materi eksklusif yang hanya tersedia untuk anggota Ruang Edit, termasuk template, preset, dan alat bantu lainnya.",
         },
         {
             img: "/img/Benefit/Trainer.svg",
-            title: "Training from Expert",
+            title: "Komunitas Kreatif",
             deskripsi:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
+                "Bergabunglah dengan komunitas kreatif yang mendukung dan saling berbagi ilmu dan pengalaman.",
         },
         {
             img: "/img/Benefit/Playlist.svg",
-            title: "Playlist Course",
+            title: "Pembelajaran Langsung",
             deskripsi:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ",
+                "Dapatkan pembelajaran langsung dari para ahli dan praktisi di bidang editing dengan pengalaman bertahun-tahun.",
         },
     ];
     return dataBenefit;

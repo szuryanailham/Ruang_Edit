@@ -10,14 +10,14 @@ const About: React.FC = () => {
             <div className="w-[85%] md:w-[75%] lg:w-[45%] bg-[url('/img/image_about.svg')] h-[221px] md:h-[350px] rounded-lg bg-cover bg-center"></div>
             {/* text */}
             <div className="flex flex-col item-center lg:w-[60%]">
-                <h1 className="text-5xl text-colorFont font-bold text-center mt-5 w-[85%] mb-3 mx-auto">
+                <h1 className="text-4xl text-colorFont font-bold text-center mt-5 w-[85%] mb-3 mx-auto">
                     What is <span className="text-BaseColor">Ruang Edit ?</span>
                 </h1>
-                <div className="md:text-xl md:w-[85%] mx-auto p-3">
-                    <p className="p-3 text-center lg:text-left">
+                <div className="text-sm md:text-xl md:w-[85%] mx-auto">
+                    <p className="p-3 lg:px-5 text-sm text-center">
                         {paragraphs[0]}
                     </p>
-                    <p className="p-3 text-center lg:text-left">
+                    <p className="p-3 lg:px-5 text-sm text-center">
                         {paragraphs[1]}
                     </p>
                 </div>

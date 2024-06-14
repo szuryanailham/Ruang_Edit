@@ -11,6 +11,7 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
        
     Route::get('/', 'HomeController@index');
 
+    Route::get('/temporary-trial', 'HomeController@temporary');
 
     // Route::get('/mentor', 'HomeController@mentor');
 

@@ -68,6 +68,9 @@ class HomeController extends Controller
             'user' => $user
         ]);
     }
+    public function temporary(){
+        return Inertia::render('Temporary');
+    }
     
    
 }

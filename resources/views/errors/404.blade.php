@@ -28,7 +28,7 @@
         h1 {
             font-size: 4em;
             margin: 0 0 10px;
-            color: #FF6B6B;
+            color: rgb(208, 193, 27);
         }
         p {
             font-size: 1.2em;
@@ -41,13 +41,13 @@
             padding: 10px 20px;
             font-size: 1em;
             color: #fff;
-            background-color: #007BFF;
+            background-color: #d0c11b;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
         a:hover {
-            background-color: #0056b3;
+            background-color: #776e0b;
             transform: translateY(-2px);
         }
         img {

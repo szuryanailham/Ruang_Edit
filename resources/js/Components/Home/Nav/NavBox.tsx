@@ -68,8 +68,14 @@ const NavBox: React.FC = () => {
                         <ElemntSidebar url={""} text={"Course"} />
                     </AccordionTrigger>
                     <AccordionContent>
-                        <ElemntSidebar url={"/class"} text={"Class"} />
-                        <ElemntSidebar url={"/mentor"} text={"Mentor"} />
+                        <ElemntSidebar
+                            url={"/temporary-trial"}
+                            text={"Class"}
+                        />
+                        <ElemntSidebar
+                            url={"/temporary-trial"}
+                            text={"Mentor"}
+                        />
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
@@ -158,7 +164,7 @@ const NavBox: React.FC = () => {
                                     <DropdownMenuContent>
                                         <DropdownMenuItem>
                                             <Link
-                                                href="/class"
+                                                href="/temporary-trial"
                                                 className=" w-full block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
                                             >
                                                 Class
@@ -166,7 +172,7 @@ const NavBox: React.FC = () => {
                                         </DropdownMenuItem>
                                         <DropdownMenuItem>
                                             <Link
-                                                href="/mentor"
+                                                href="/temporary-trial"
                                                 className=" w-full block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
                                             >
                                                 Mentor
@@ -178,7 +184,7 @@ const NavBox: React.FC = () => {
                             {/* EVENTS  */}
                             <li>
                                 <a
-                                    href="/events"
+                                    href="/temporary-trial"
                                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Events
@@ -187,7 +193,7 @@ const NavBox: React.FC = () => {
                             {/* WABINER */}
                             <li>
                                 <Link
-                                    href="/wabiner"
+                                    href="/temporary-trial"
                                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Wabiner
@@ -289,9 +295,15 @@ const NavBox: React.FC = () => {
                         {/* Course */}
                         <AccordingMenu />
                         {/* event */}
-                        <ElemntSidebar url={"/events"} text={"Event"} />
+                        <ElemntSidebar
+                            url={"/temporary-trial"}
+                            text={"Event"}
+                        />
                         {/* wabiner */}
-                        <ElemntSidebar url={"/wabiner"} text={"Wabiner"} />
+                        <ElemntSidebar
+                            url={"/temporary-trial"}
+                            text={"Wabiner"}
+                        />
                         {/* About */}
                         <ElemntSidebar url={"about"} text={"About"} />
                         <li className="ml-3">
@@ -304,7 +316,9 @@ const NavBox: React.FC = () => {
                         </li>
                         <li className="ml-3">
                             {/* Sign Up */}
-                            <Button variant="outline">Sign Up</Button>
+                            <Link href="/register">
+                                <Button variant="outline">Sign Up</Button>
+                            </Link>
                         </li>
                     </ul>
                 </div>

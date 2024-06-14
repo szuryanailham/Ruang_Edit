@@ -29,10 +29,10 @@ const Header: React.FC = () => {
                 <div className="mt-3 w-full mx-auto lg:w-[70%] lg:p-3">
                     {/* judul */}
                     <div className=" w-full md:w-[80%] mx-auto md:mb-10">
-                        <h1 className="text-4xl md:text-6xl font-bold px-2 text-colorFont leading-10 md:leading-[4rem]">
+                        <h1 className="text-4xl md:text-6xl font-bold px-2 text-colorFont leading-10 md:leading-[4rem] ">
                             {title()}
                         </h1>
-                        <p className=" p-3 md:p-4 lg:p-5 text-md md:text-lg">
+                        <p className=" p-3 md:p-4 lg:p-5 text-md md:text-lg ">
                             {secondText()}
                         </p>
                     </div>
@@ -98,11 +98,11 @@ const Header: React.FC = () => {
                     </div>
                     {/* text course */}
                     <div className="flex flex-col items-center lg:items-start lg:w-[70%] lg:p-3">
-                        <h1 className="text-4xl md:text-6xl lg:px-5 text-colorFont font-bold text-center lg:text-start mt-5 md:w-[90%]">
+                        <h1 className="text-4xl md:text-6xl lg:px-5 text-colorFont font-bold text-center lg:text-start mt-5 md:w-[90%] mb-3">
                             <span className="text-BaseColor"> Benefit</span>{" "}
                             from our online learning
                         </h1>
-                        <div className="mt-7 text-colorFont mb-3 md:px-20 lg:px-5 lg:py-5 md:py-3 mx-auto">
+                        <div className="mt-7 text-colorFont mb-3 md:px-20 lg:px-5 lg:py-5 md:py-3 mx-auto ">
                             {benefitRuangEdit().map(
                                 (element: Benefit, index: number) => (
                                     <div
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
                                             <h1 className="font-bold text-2xl md:text-3xl md:mb-2">
                                                 {element.title}
                                             </h1>
-                                            <p className="leading-1 text-wrap text-sm md:text-xl md:w-[90%]">
+                                            <p className="leading-1 text-wrap text-xs md:text-lg md:w-p[90%] lg:w-[80%]">
                                                 {element.deskripsi}
                                             </p>
                                         </div>

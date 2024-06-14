@@ -3,19 +3,19 @@ import CardCourse from "./CardCourse";
 const PopularCourse: React.FC = () => {
     const text = () => {
         return (
-            <p className="whitespace-normal">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos
-                nemo vitae officia eum, alias commodi cum veniam doloribus
-                incidunt, minus reprehenderit qui voluptate corrupti. Veniam
+            <p className="whitespace-normal max-w-prose">
+                Jelajahi kursus paling populer kami yang dirancang untuk
+                meningkatkan keterampilan Anda dalam edit video, fotografi, dan
+                desain. Baik Anda pemula maupun profesional
             </p>
         );
     };
     return (
         <div className=" p-5 md:p-10 w-full h-fit bg-BaseColor2 flex flex-col items-center">
             <h1 className="w-[80%] text-white font-bold text-3xl text-center mx-auto mt-3">
-                Our Popular Course
+                Kursus Populer Kami
             </h1>
-            <p className="p-5 lg:w-[70%] lg:p-5 text-sm md:text-xl text-center mb-3 text-white w-full md:w-[90%]">
+            <p className="p-5 lg:w-[70%] lg:p-5 text-sm md:text-xl text-center mx-auto mb-3 text-white w-full md:w-[90%]">
                 {text()}
             </p>
             {/* POPULAR CARD */}

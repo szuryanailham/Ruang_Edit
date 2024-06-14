@@ -55,13 +55,13 @@ export default function Login({
                     {/* END LOGIN IMAGE  */}
                     <div>
                         {/* TITLE */}
-                        <div className="mb-5 p-2 md:p-5 md:text-center">
-                            <h1 className="text-2xl font-bold mb-1">
+                        <div className="mb-5 p-2 md:text-center">
+                            <h1 className="text-2xl font-bold mb-1 text-center">
                                 Welcome Back
                             </h1>
-                            <p className="leading-5 p-2 lg:mx-auto text-wrap w-[80%]">
-                                Today is a new day. It's your day. You shape it.
-                                Sign in to start managing your projects.
+                            <p className="leading-5 p-2 text-mdlg:mx-auto text-wrap w-full">
+                                Silakan masuk ke akun Anda untuk melanjutkan
+                                perjalanan kreatif Anda bersama Ruang Edit.
                             </p>
                         </div>
                         {/* END TITLE */}

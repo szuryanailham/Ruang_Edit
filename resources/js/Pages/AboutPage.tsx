@@ -1,5 +1,5 @@
 import GalleryAbout from "@/Components/About/GalleryAbout";
-import { TextAbout } from "@/Components/About/TextAbout";
+import { TextAbout, TextAbout2 } from "@/Components/About/TextAbout";
 import YouTubeEmbed from "@/Components/About/YouTubeEmbed";
 import Footer from "@/Components/Home/Footer/Footer";
 import NavBox from "@/Components/Home/Nav/NavBox";
@@ -19,14 +19,17 @@ const AboutPage: React.FC<AboutPageProps> = ({ user }) => {
                 {/* END IMAGE PROFILE */}
 
                 {/* TITLE */}
-                <h1 className=" mx-auto w-[250px] md:w-[350px] text-center text-3xl md:text-4xl font-bold text-colorFont mb-2 mt-2 ">
+                <h1 className=" mx-auto w-[250px] md:w-[350px] text-center text-3xl md:text-4xl font-bold text-colorFont mb-2 mt-3">
                     Quotes of <span className="text-BaseColor">Ruang Edit</span>
                 </h1>
                 {/* END TITLE */}
                 {/* DESCRIPTION */}
-                <div className="text-center md:text-md w-[85%] mx-auto mt-2 md:mt-3">
-                    <p>
+                <div className="text-center md:text-md w-[85%] mx-auto mt-2 md:mt-3 flex flex-col md:flex-row">
+                    <p className="mb-5 md:text-left px-2 md:px-4">
                         <TextAbout />
+                    </p>
+                    <p className="md:text-right md:px-4">
+                        <TextAbout2 />
                     </p>
                 </div>
                 {/* END OF DESCRIPTION */}
