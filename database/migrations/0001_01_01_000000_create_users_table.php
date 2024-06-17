@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->enum('Bidang', ['Design', 'Photographer', 'Videographer'])->default('Design');
+            $table->enum('role', ['admin', 'super_admin','member'])->default('member');
+            $table->string('no_telpon')->nullable();
+            $table->text('alamat')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
