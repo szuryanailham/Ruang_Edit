@@ -24,11 +24,11 @@ const AboutPage: React.FC<AboutPageProps> = ({ user }) => {
                 </h1>
                 {/* END TITLE */}
                 {/* DESCRIPTION */}
-                <div className="text-center md:text-md w-[85%] mx-auto mt-2 md:mt-3 flex flex-col md:flex-row">
-                    <p className="mb-5 md:text-left px-2 md:px-4">
+                <div className="text-center md:text-md w-[85%] mx-auto mt-4 md:mt-7 flex flex-col md:flex-row">
+                    <p className="mb-5 md:text-center px-2 md:px-5 max-w-prose">
                         <TextAbout />
                     </p>
-                    <p className="md:text-right md:px-4">
+                    <p className="mb-5 md:text-center px-2 md:px-5 max-w-prose">
                         <TextAbout2 />
                     </p>
                 </div>
@@ -42,9 +42,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ user }) => {
                         <span className="text-BaseColor">Ruang Edit</span>
                     </h1>
                     <p className="p-2 text-center md:text-md w-[85%] mx-auto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Cupiditate repellat delectus ratione sapiente sequi,
-                        laboriosam veniam est eum quam animi!
+                        Temukan Komunitas Ruang Edit di berbagai wilayah sekitar
+                        Anda. Setiap komunitas regional kami menyelenggarakan
+                        beragam kegiatan, workshop, dan acara yang disesuaikan
+                        dengan kebutuhan dan minat lokal. Bergabunglah dengan
+                        komunitas terdekat Anda dan temukan teman-teman baru
+                        yang memiliki semangat kreatif yang sama
                     </p>
                     {/* END TITLE */}
                     <div className="m-10">

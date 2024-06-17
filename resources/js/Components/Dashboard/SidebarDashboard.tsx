@@ -116,7 +116,7 @@ function SidebarDashboard() {
                             {/* COURSE */}
                             <li>
                                 <Link
-                                    href="/"
+                                    href="/temporary-trial"
                                     className=" flex  items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group hover:text-black"
                                 >
                                     <FaBook className="text-xl" />
@@ -128,7 +128,7 @@ function SidebarDashboard() {
                             {/* Sertifikat */}
                             <li>
                                 <Link
-                                    href="/"
+                                    href="/temporary-trial"
                                     className=" flex  items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group hover:text-black"
                                 >
                                     <PiCertificateFill className="text-2xl" />
