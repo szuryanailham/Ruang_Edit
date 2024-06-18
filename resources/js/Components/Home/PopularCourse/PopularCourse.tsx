@@ -21,23 +21,23 @@ const PopularCourse: React.FC = () => {
             {/* POPULAR CARD */}
             <div className="mt-2 flex flex-col md:flex-row gap-5 lg:gap-10 md:p-3">
                 <CardCourse
-                    image="/img/card_course_img.svg"
+                    image="/img/course/populer_course.jpg"
                     category="design"
-                    title="Class Videografer with CapCut"
+                    title="Class Photografer with Lightrpom"
                     rating={4.5}
                     course={7}
                     member={50}
                 />
                 <CardCourse
-                    image="/img/card_course_img.svg"
+                    image="/img/course/populer_course2.jpg"
                     category="design"
-                    title="Class Videografer with CapCut"
+                    title="Class Design Grafis with Canva"
                     rating={4.5}
                     course={7}
                     member={50}
                 />
                 <CardCourse
-                    image="/img/card_course_img.svg"
+                    image="/img/course/populer_course3.png"
                     category="design"
                     title="Class Videografer with CapCut"
                     rating={4.5}
