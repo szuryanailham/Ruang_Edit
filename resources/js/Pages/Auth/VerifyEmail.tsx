@@ -35,10 +35,11 @@ export default function VerifyEmail({ status }: { status?: string }) {
                     <CardContent>
                         {/* TEXT */}
                         <p className="md:w-[80%] md:mx-auto text-center p-3 md:p-2 md:mb-10">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Suscipit debitis enim commodi reiciendis vel,
-                            exercitationem quia quas magnam nulla quod!
+                            Pemberitahuan: Silakan verifikasi email Anda untuk
+                            melanjutkan. Periksa kotak masuk Anda dan ikuti
+                            tautan verifikasi yang telah kami kirimkan.
                         </p>
+
                         {status === "verification-link-sent" && (
                             <div className="mb-4 font-medium text-sm text-green-600">
                                 A new verification link has been sent to the
