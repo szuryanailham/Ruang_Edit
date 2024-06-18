@@ -4,6 +4,7 @@ import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 import NavBox from "@/Components/Home/Nav/NavBox";
+import Meta from "@/Components/Meta";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -27,9 +28,11 @@ export default function Register() {
 
     return (
         <>
-            <Head title="Register" />
+            <Meta
+                title="Register"
+                description="Bergabunglah dengan Ruang Edit untuk mendapatkan akses ke kursus dan tutorial eksklusif. Daftar sekarang dan tingkatkan keterampilan editing Anda bersama kami!"
+            />
             <section>
-                <Head title="Sign up Ruang Edit" />
                 <NavBox />
                 <div className=" w-full mt-2 h-fit flex flex-col lg:flex-row item-center p-4">
                     {/* SIGN UP IMAGE */}
@@ -182,7 +185,9 @@ export default function Register() {
                             </div>
                             {/*LINE OR */}
                             {/* LOGIN WITH FOOGLE */}
+
                             <button
+                                disabled
                                 type="submit"
                                 className="lg:w-1/2 flex items-center justify-center w-full text-white bg-BaseColor focus:ring-4 mx-auto focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                             >

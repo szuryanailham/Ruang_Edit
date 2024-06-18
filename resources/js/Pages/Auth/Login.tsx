@@ -6,7 +6,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 import NavBox from "@/Components/Home/Nav/NavBox";
-
+import Meta from "@/Components/Meta";
 export default function Login({
     status,
     canResetPassword,
@@ -35,9 +35,11 @@ export default function Login({
     return (
         <>
             <NavBox />
+            <Meta
+                title="Login"
+                description="Silakan masuk ke Ruang Edit untuk mengakses konten eksklusif. Manfaatkan platform kami untuk belajar editing dengan instruktur profesional."
+            />
             <section>
-                <Head title="Login Ruang Edit" />
-
                 {status && (
                     <div className="mb-4 font-medium text-sm text-green-600">
                         {status}
@@ -171,17 +173,19 @@ export default function Login({
                             </div>
                             {/*LINE OR */}
                             {/* LOGIN WITH FOOGLE */}
-                            <button
-                                type="submit"
-                                className="flex items-center justify-center w-full text-white bg-BaseColor2 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                            >
-                                <img
-                                    src="/img/Google.svg"
-                                    alt="google icon"
-                                    className="mr-2"
-                                />
-                                <span>Login with Google</span>
-                            </button>
+                            <Link href="/temporary-trial">
+                                <button
+                                    type="submit"
+                                    className="flex items-center justify-center w-full text-white bg-BaseColor2 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                >
+                                    <img
+                                        src="/img/Google.svg"
+                                        alt="google icon"
+                                        className="mr-2"
+                                    />
+                                    <span>Login with Google</span>
+                                </button>
+                            </Link>
 
                             {/* LOGIN WITH GOOGLE */}
                             <div className="text-sm font-medium text-gray-500 md:text-xl">

@@ -3,6 +3,7 @@ import { Button } from "@/Components/shadcn/ui/button";
 import { Input } from "@/Components/shadcn/ui/input";
 import { Label } from "@/Components/shadcn/ui/label";
 import { Textarea } from "@/Components/shadcn/ui/textarea";
+
 import {
     Select,
     SelectContent,
@@ -13,6 +14,7 @@ import {
 } from "@/Components/shadcn/ui/select";
 import React from "react";
 import { useForm } from "@inertiajs/react";
+import MetaDashboard from "@/Components/MetaDashboard";
 
 interface Month {
     id: number;
@@ -47,6 +49,7 @@ const AddNewAdmin: React.FC<Datatype> = ({ title, Months }) => {
     };
     return (
         <>
+            <MetaDashboard />
             <Navbar />
             <div className="md:ml-[250px] mb-10">
                 <h1 className="text-2xl font-bold text-center m-5">{title}</h1>

@@ -1,10 +1,15 @@
 import React from "react";
 import image from "@/image/temporary.jpg";
 import NavBox from "@/Components/Home/Nav/NavBox";
+import Meta from "@/Components/Meta";
 
 const Temporary: React.FC = () => {
     return (
         <>
+            <Meta
+                title="TemporaryPage"
+                description="Halaman ini sedang dalam pengembangan. Kunjungi kembali nanti untuk menemukan konten baru dan menarik dari Ruang Edit. Kami sedang mempersiapkan sesuatu yang hebat untuk Anda!"
+            />
             <NavBox />
             <section className="bg-white dark:bg-gray-900 flex items-center justify-center min-h-screen">
                 <div className="py-8 px-6 flex flex-col mx-auto max-w-screen-xl lg:py-16 lg:px-6">

@@ -3,8 +3,9 @@ import { title, secondText, benefitRuangEdit } from "./Text";
 import { Button } from "../../shadcn/ui/button";
 import { FaCirclePlay, FaRegBookmark } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
-import headerImage from "@/image/Home/Header-Home.svg";
+import headerImage from "@/image/Home/Header-Home.png";
 import AboutImage from "@/image/Home/Header-About.svg";
+import { Link } from "@inertiajs/react";
 const Header: React.FC = () => {
     interface Benefit {
         img: string;
@@ -19,7 +20,7 @@ const Header: React.FC = () => {
                 {/* IMAGE HEADDER  */}
                 <div className="lg:order-last">
                     <img
-                        className="mt-7 w-[330px] md:w-[550px] lg:w-[650px] lg:p-3 "
+                        className=" w-[330px] md:w-[550px] lg:w-[650px] lg:p-3 "
                         src={headerImage}
                         alt="Header Image"
                     />
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
                     <div className=" mt-7 mx-auto lg:ml-5 lg:mx-0 flex justify-around w-[80%] md:w-[60%] lg:w-[80%] item-center gap-3">
                         {/* enroll button */}
                         <Button className="bg-BaseColor2 text-md h-10 rounded-md px-5 md:px-12 md:h-12 ">
-                            Enroll Now
+                            <Link href="/register">Enroll Now</Link>
                         </Button>
                         {/* Trailer */}
                         <Button
@@ -49,7 +50,7 @@ const Header: React.FC = () => {
                             className="text-md border-2 h-10 rounded-md px-5 md:px-12 md:h-12 "
                         >
                             <FaCirclePlay className="text-BaseColor w-7 h-5  " />
-                            What’s etech?
+                            <Link href="/about">What’s etech?</Link>
                         </Button>
                     </div>
                 </div>
@@ -59,11 +60,11 @@ const Header: React.FC = () => {
 
             {/* ========= BENEFIT ========== */}
             <section className="mt-4 p-5 flex flex-col">
-                <h1 className="text-center text-3xl md:text-4xl font-bold text-BaseColor mb-3 md:mb-5">
+                {/* <h1 className="text-center text-3xl md:text-4xl font-bold text-BaseColor mb-3 md:mb-5">
                     Search Course
-                </h1>
+                </h1> */}
                 {/* search course */}
-                <form className="flex items-center w-[80%] lg:w-[50%] mx-auto">
+                {/* <form className="flex items-center w-[80%] lg:w-[50%] mx-auto">
                     <label htmlFor="simple-search" className="sr-only">
                         Search
                     </label>
@@ -86,7 +87,7 @@ const Header: React.FC = () => {
                         <CiSearch className="text-md md:text-xl" />
                         <span className="sr-only">Search</span>
                     </button>
-                </form>
+                </form> */}
                 <div className="flex flex-col lg:flex-row mt-10 item-center gap-5 ">
                     {/* IMAGE HEADER 2  */}
                     <div className="flex flex-col items-center md:mb-5 lg:w-[55%]">

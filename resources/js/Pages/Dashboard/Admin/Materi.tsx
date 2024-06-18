@@ -4,6 +4,7 @@ import Navbar from "@/Components/Dashboard/Navbar";
 import { Button } from "@/Components/shadcn/ui/button";
 import { IoTrash } from "react-icons/io5";
 import { FaEdit } from "react-icons/fa";
+import MetaDashboard from "@/Components/MetaDashboard";
 
 interface Materi {
     id: number;
@@ -58,6 +59,7 @@ const ListEditMateri: React.FC<Datatype> = ({ title, materi, pagination }) => {
 
     return (
         <>
+            <MetaDashboard />
             <Navbar />
 
             <div className="w-full flex justify-end px-5 py-3">

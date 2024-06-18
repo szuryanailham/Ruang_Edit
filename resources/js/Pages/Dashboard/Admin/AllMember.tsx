@@ -11,6 +11,8 @@ import { Checkbox } from "@/Components/shadcn/ui/checkbox";
 import { Button } from "@/Components/shadcn/ui/button";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Link, useForm } from "@inertiajs/react";
+import MetaDashboard from "@/Components/MetaDashboard";
+
 interface Member {
     id: number;
     name: string;
@@ -88,6 +90,7 @@ const AllMember: React.FC<Props> = ({ member }) => {
 
     return (
         <>
+            <MetaDashboard />
             <Navbar />
             <div className="md:ml-[270px] mb-[100px] md:m-5">
                 <h1 className="text-center text-2xl font-bold my-5">

@@ -1,4 +1,5 @@
 import Navbar from "@/Components/Dashboard/Navbar";
+import MetaDashboard from "@/Components/MetaDashboard";
 import { Button } from "@/Components/shadcn/ui/button";
 import { Link } from "@inertiajs/react";
 import React from "react";
@@ -16,6 +17,7 @@ interface Datatype {
 const ListEditMateri: React.FC<Datatype> = ({ title, Months }) => {
     return (
         <>
+            <MetaDashboard />
             <Navbar />
             <div className="w-full flex justify-end px-5 py-3">
                 <Link href="/admin/edit-materi/create">
