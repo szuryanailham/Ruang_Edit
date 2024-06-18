@@ -12,7 +12,7 @@ const Meta: React.FC<MetaProps> = ({ title, description }) => {
         <Head>
             <title>{title}</title>
             <meta name="description" content={description} />
-            <link rel="icon" href="./img/favicon.svg" type="image/x-icon" />
+            <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
         </Head>
     );
 };

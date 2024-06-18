@@ -10,7 +10,7 @@ const MetaDashboard: React.FC = () => {
                 name="description"
                 content="Selamat datang di dashboard Ruang Edit. Kelola kursus Anda, ikuti webinar, dan tingkatkan keterampilan editing Anda bersama platform kami."
             />
-            <link rel="icon" href="./img/favicon.svg" type="image/x-icon" />
+            <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
         </Head>
     );
 };

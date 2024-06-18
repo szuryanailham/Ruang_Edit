@@ -115,7 +115,7 @@ const NavBox: React.FC = () => {
                         className="flex items-center rtl:space-x-reverse"
                     >
                         <img
-                            src="/img/Logo.svg"
+                            src="/img/favicon.png"
                             className="h-10 w-12 md:h-12 md:w-[50px]"
                             alt="Ruang Edit Logo"
                         />

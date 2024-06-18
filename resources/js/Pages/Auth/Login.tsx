@@ -50,7 +50,7 @@ export default function Login({
                     {/* LOGIN IMAGE */}
                     <div
                         style={{
-                            backgroundImage: `url('/img/login_image.svg')`,
+                            backgroundImage: `url('/img/login.jpg')`,
                         }}
                         className=" lg:order-2 w-full lg:w-[45%] h-[200px] md:h-[300px] lg:p-0 lg:h-screen bg-BaseColor bg-center rounded-lg bg-cover bg-no-repeat mx-auto p-4"
                     ></div>
