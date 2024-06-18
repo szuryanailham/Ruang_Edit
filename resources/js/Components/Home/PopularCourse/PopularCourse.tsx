@@ -23,7 +23,7 @@ const PopularCourse: React.FC = () => {
                 <CardCourse
                     image="/img/course/populer_course.jpg"
                     category="design"
-                    title="Class Photografer with Lightrpom"
+                    title="Class Photografer with Lightroom"
                     rating={4.5}
                     course={7}
                     member={50}

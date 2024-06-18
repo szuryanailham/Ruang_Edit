@@ -77,13 +77,13 @@ function SidebarDashboard() {
                                 {/* END ICON BACK */}
                             </li>
                             {/* logo Ruang Edit */}
-                            <li className="flex text-white">
+                            <li className="flex text-white item-center mb-2">
                                 <img
-                                    src="/img/Logo.svg"
+                                    src="/img/favicon.png"
                                     className="h-10 w-12 md:h-12 md:w-[50px]"
                                     alt="Flowbite Logo"
                                 />
-                                <span className="text-xs font-semibold whitespace-nowrap text-wrap text-dark leading-4 w-10 md:text-x md:leading-2">
+                                <span className=" mt-2 text-xs font-semibold whitespace-nowrap text-wrap text-dark leading-4 w-10 md:text-x md:leading-2">
                                     Ruang Edit
                                 </span>
                             </li>

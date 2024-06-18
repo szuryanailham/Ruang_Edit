@@ -44,7 +44,7 @@ export default function Slider() {
                         <div className="p-1 mx-auto">
                             <CardTestimony
                                 name="@szuryanailham"
-                                comment="cocok bnget buat belajar skill editing plus circle yang mendukung , buat Ruang edit tetap solid dan maju terus"
+                                comment="cocok bnget buat belajar skill editing plus cari circle yang mendukung , buat Ruang edit tetap solid dan maju terus"
                             />
                         </div>
                     </CarouselItem>
