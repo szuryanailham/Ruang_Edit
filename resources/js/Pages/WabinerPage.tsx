@@ -1,11 +1,17 @@
 import Footer from "@/Components/Home/Footer/Footer";
 import NavBox from "@/Components/Home/Nav/NavBox";
+import Meta from "@/Components/Meta";
 import CardWabiner from "@/Components/Wabiner/CardWabiner";
 import InputWabiner from "@/Components/Wabiner/InputWabiner";
 import React from "react";
+
 const WabinerPage: React.FC = () => {
     return (
         <>
+            <Meta
+                title="WebinarPage"
+                description="Ikuti webinar eksklusif dari Ruang Edit untuk meningkatkan keterampilan editing Anda. Dapatkan wawasan dari para ahli di bidang desain grafis, fotografi, dan videografi. Jangan lewatkan kesempatan untuk belajar dan berinteraksi langsung dengan profesional berpengalaman."
+            />
             <NavBox />
             <div className=" h-fit w-full p-5 mb-[150px]">
                 <InputWabiner />

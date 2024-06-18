@@ -5,6 +5,7 @@ import Footer from "@/Components/Home/Footer/Footer";
 import NavBox from "@/Components/Home/Nav/NavBox";
 import React from "react";
 import { User } from "@/types";
+import Meta from "@/Components/Meta";
 
 interface AboutPageProps {
     user: User;
@@ -12,6 +13,10 @@ interface AboutPageProps {
 const AboutPage: React.FC<AboutPageProps> = ({ user }) => {
     return (
         <>
+            <Meta
+                title="AboutPage"
+                description="Ruang Edit adalah platform pembelajaran editing online yang didedikasikan untuk membantu desainer grafis, fotografer, dan videografer meningkatkan keterampilan mereka. Pelajari lebih lanjut tentang misi kami, tim kami, dan bagaimana kami dapat membantu Anda menjadi ahli dalam bidang editing."
+            />
             <NavBox />
             <div className="mt-2 h-fit flex flex-col w-full item-center p-3">
                 {/* IMAGE PROFILE */}

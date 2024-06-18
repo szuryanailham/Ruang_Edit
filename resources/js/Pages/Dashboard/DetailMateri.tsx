@@ -1,7 +1,6 @@
 import YouTubeEmbed from "@/Components/About/YouTubeEmbed";
 import Navbar from "@/Components/Dashboard/Navbar";
-import { Link } from "@inertiajs/react";
-import { User } from "@/types";
+import MetaDashboard from "@/Components/MetaDashboard";
 
 import React from "react";
 interface Materi {
@@ -20,6 +19,7 @@ interface Datatype {
 const DetailMateri: React.FC<Datatype> = ({ title, Detail_materi }) => {
     return (
         <>
+            <MetaDashboard />
             <div className="p-4 sm:ml-64">
                 <Navbar />
                 <h1 className="text-center font-bold text-2xl mt-5">
