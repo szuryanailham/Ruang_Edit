@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             MonthSeeder::class,
-            // ListMateriSeeder::class
+            ListMateriSeeder::class
         ]);
 
     }
