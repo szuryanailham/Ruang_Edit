@@ -24,7 +24,7 @@ export default function VerifyEmail({ status }: { status?: string }) {
                             className="flex items-center rtl:space-x-reverse"
                         >
                             <img
-                                src="/img/Logo.svg"
+                                src="/img/favicon.png"
                                 className="h-20 w-20 md:h-25 md:w-[50px]"
                                 alt="Flowbite Logo"
                             />
