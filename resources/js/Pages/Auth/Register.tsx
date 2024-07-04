@@ -41,7 +41,7 @@ export default function Register() {
                         style={{
                             backgroundImage: `url('/img/register.jpg')`,
                         }}
-                        className="w-full lg:w-1/2 h-[200px] md:h-[400px] bg-BaseColor rounded-xl bg-cover bg-no-repeat"
+                        className="w-full h-[250px] lg:w-1/2  md:h-[400px] bg-BaseColor rounded-xl bg-cover bg-no-repeat"
                     ></div>
                     {/* END SIGN UP IMAGE  */}
 

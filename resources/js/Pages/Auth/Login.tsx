@@ -46,13 +46,13 @@ export default function Login({
                     </div>
                 )}
 
-                <div className="mt-[10%] md:mt-[10%] h-fit flex flex-col lg:flex-row w-full item-center p-5">
+                <div className="mt-[15%] md:mt-[10%] h-fit flex flex-col lg:flex-row w-full item-center p-5">
                     {/* LOGIN IMAGE */}
                     <div
                         style={{
                             backgroundImage: `url('/img/Login.jpg')`,
                         }}
-                        className=" lg:order-2 w-full lg:w-[45%] h-[200px] md:h-[300px] lg:p-0 lg:h-screen bg-BaseColor bg-center rounded-lg bg-cover bg-no-repeat mx-auto p-4"
+                        className=" lg:order-2 w-full lg:w-[45%] h-[250px] md:h-[300px] lg:p-0 lg:h-screen bg-BaseColor bg-center rounded-lg bg-cover bg-no-repeat mx-auto p-4"
                     ></div>
                     {/* END LOGIN IMAGE  */}
                     <div>
