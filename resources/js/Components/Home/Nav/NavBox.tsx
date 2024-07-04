@@ -68,10 +68,7 @@ const NavBox: React.FC = () => {
                         <ElemntSidebar url={""} text={"Course"} />
                     </AccordionTrigger>
                     <AccordionContent>
-                        <ElemntSidebar
-                            url={"/temporary-trial"}
-                            text={"Class"}
-                        />
+                        <ElemntSidebar url={"/class"} text={"Class"} />
                         <ElemntSidebar
                             url={"/temporary-trial"}
                             text={"Mentor"}
@@ -106,7 +103,7 @@ const NavBox: React.FC = () => {
         <>
             <nav
                 ref={navbar}
-                className="bg-white z-10  border-gray-200 sticky top-0 w-full"
+                className="bg-white z-10  border-gray-200 fixed top-0 w-full"
             >
                 <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4 bg-BaseColor2 md:bg-white shadow-lg">
                     {/* LOGO NAVBAR */}
@@ -164,7 +161,7 @@ const NavBox: React.FC = () => {
                                     <DropdownMenuContent>
                                         <DropdownMenuItem>
                                             <Link
-                                                href="/temporary-trial"
+                                                href="/class"
                                                 className=" w-full block py-2 px-3 text-fontBase rounded md:hover:bg-transparent md:border-0  md:p-0 "
                                             >
                                                 Class
@@ -306,21 +303,52 @@ const NavBox: React.FC = () => {
                         />
                         {/* About */}
                         <ElemntSidebar url={"about"} text={"About"} />
-                        <li className="ml-3">
-                            {/* Sign in */}
-                            <Link href="/login">
-                                <Button className="bg-transparent text-md font-bold">
-                                    Login
-                                </Button>
-                            </Link>
-                        </li>
-                        <li className="ml-3">
-                            {/* Sign Up */}
-                            <Link href="/register">
-                                <Button variant="outline">Sign Up</Button>
-                            </Link>
-                        </li>
+
+                        {!auth.user ? (
+                            <>
+                                <li className="ml-3">
+                                    {/* Sign in */}
+                                    <Link href="/login">
+                                        <Button className="bg-transparent text-md font-bold">
+                                            Login
+                                        </Button>
+                                    </Link>
+                                </li>
+                                <li className="ml-3">
+                                    {/* Sign Up */}
+                                    <Link href="/register">
+                                        <Button variant="outline">
+                                            Sign Up
+                                        </Button>
+                                    </Link>
+                                </li>
+                            </>
+                        ) : (
+                            <></>
+                        )}
                     </ul>
+                    {!auth.user ? (
+                        <></>
+                    ) : (
+                        <>
+                            <ElemntSidebar
+                                url={"dashboard"}
+                                text={"Dashboard"}
+                            />
+
+                            <div className="flex gap-5 mt-[90%]">
+                                <img
+                                    className="w-10 h-10 rounded-full"
+                                    src="https://github.com/shadcn.png"
+                                    alt="Rounded avatar"
+                                />
+
+                                <p className="order-2 font-semibold text-white p-2">
+                                    {auth.user.name}
+                                </p>
+                            </div>
+                        </>
+                    )}
                 </div>
             </div>
         </>

@@ -34,19 +34,19 @@ export default function Login({
 
     return (
         <>
-            <NavBox />
             <Meta
                 title="Login"
                 description="Silakan masuk ke Ruang Edit untuk mengakses konten eksklusif. Manfaatkan platform kami untuk belajar editing dengan instruktur profesional."
             />
+            <NavBox />
             <section>
                 {status && (
-                    <div className="mb-4 font-medium text-sm text-green-600">
+                    <div className=" mb-4 font-medium text-sm text-green-600">
                         {status}
                     </div>
                 )}
 
-                <div className="mt-2 h-fit flex flex-col lg:flex-row w-full item-center p-5">
+                <div className="mt-[10%] md:mt-[10%] h-fit flex flex-col lg:flex-row w-full item-center p-5">
                     {/* LOGIN IMAGE */}
                     <div
                         style={{
@@ -173,19 +173,6 @@ export default function Login({
                             </div>
                             {/*LINE OR */}
                             {/* LOGIN WITH FOOGLE */}
-                            <Link href="/temporary-trial">
-                                <button
-                                    type="submit"
-                                    className="flex items-center justify-center w-full text-white bg-BaseColor2 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                                >
-                                    <img
-                                        src="/img/Google.svg"
-                                        alt="google icon"
-                                        className="mr-2"
-                                    />
-                                    <span>Login with Google</span>
-                                </button>
-                            </Link>
 
                             {/* LOGIN WITH GOOGLE */}
                             <div className="text-sm font-medium text-gray-500 md:text-xl">
@@ -198,6 +185,19 @@ export default function Login({
                                 </Link>
                             </div>
                         </form>
+                        <a href={route("google-auth")}>
+                            <button
+                                type="button"
+                                className=" mt-2 mx-auto md:w-[85%] flex items-center justify-center w-full text-white bg-BaseColor2 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                            >
+                                <img
+                                    src="/img/Google.svg"
+                                    alt="google icon"
+                                    className="mr-2"
+                                />
+                                <span>Login with Google</span>
+                            </button>
+                        </a>
                     </div>
                 </div>
             </section>

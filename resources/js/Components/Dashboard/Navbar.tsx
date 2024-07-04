@@ -17,7 +17,7 @@ import SidebarDashboard from "./SidebarDashboard";
 function Navbar() {
     const [position, setPosition] = React.useState("bottom");
     return (
-        <div className="w-full flex justify-end bg-white p-2 shadow-md">
+        <div className=" flex w-full justify-end bg-white p-2 shadow-md">
             <div className="w-full p-2 md:p-3 flex items-center justify-between">
                 {/* LOGO  */}
                 <Link

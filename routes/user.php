@@ -16,7 +16,7 @@ Route::namespace('App\Http\Controllers\User')->group(function () {
     // Route::get('/mentor', 'HomeController@mentor');
 
     
-    // Route::get('/class', 'HomeController@course');
+    Route::get('/class', 'HomeController@course');
     
     Route::get('/events', 'HomeController@event');
     // Route::get('/wabiner', 'HomeController@wabiner');

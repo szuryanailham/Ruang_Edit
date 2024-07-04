@@ -16,7 +16,7 @@ const Header: React.FC = () => {
     return (
         <>
             {/* ========= HEADER =========== */}
-            <section className="flex items-center flex-col lg:flex-row p-3 lg:p-5">
+            <section className="mt-[10%] md:mt-[5%] flex items-center flex-col lg:flex-row p-3 lg:p-5">
                 {/* IMAGE HEADDER  */}
                 <div className="lg:order-last">
                     <img

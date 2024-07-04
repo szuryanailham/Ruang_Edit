@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                     <div className="mb-6 md:mb-0">
                         <a href="" className="flex items-center">
                             <img
-                                src="/img/Logo.svg"
+                                src="/img/favicon.png"
                                 className="h-8 me-3"
                                 alt="Ruang Edit Logo"
                             />

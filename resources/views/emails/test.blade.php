@@ -7,6 +7,6 @@
 </head>
 <body>
     <p>Hey {{ $name }},</p>
-    <p>Dapat salam dari abang Laravel nih ....</p>
+ 
 </body>
 </html>
