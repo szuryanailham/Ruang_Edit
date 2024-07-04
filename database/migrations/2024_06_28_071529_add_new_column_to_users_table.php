@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('nama_depan');
             $table->string('nama_belakang');
-            $table->string('google_id')->nullable();
         });
     }
 
