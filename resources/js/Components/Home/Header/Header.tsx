@@ -5,6 +5,7 @@ import { FaCirclePlay, FaRegBookmark } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import headerImage from "@/image/Home/Header-Home.png";
 import AboutImage from "@/image/Home/Header-About.svg";
+import { motion } from "framer-motion";
 import { Link } from "@inertiajs/react";
 const Header: React.FC = () => {
     interface Benefit {
@@ -18,16 +19,36 @@ const Header: React.FC = () => {
             {/* ========= HEADER =========== */}
             <section className="mt-[10%] md:mt-[5%] flex items-center flex-col lg:flex-row p-3 lg:p-5">
                 {/* IMAGE HEADDER  */}
-                <div className="lg:order-last">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        ease: "linear",
+                        duration: 1,
+                        y: { duration: 1 },
+                    }}
+                    className="w-full lg:w-1/2 mx-auto mt-5"
+                >
                     <img
                         className=" w-[330px] md:w-[550px] lg:w-[650px] lg:p-3 "
                         src={headerImage}
                         alt="Header Image"
                     />
-                </div>
+                </motion.div>
 
                 {/* TITLE  HEADDER  */}
-                <div className="mt-3 w-full mx-auto lg:w-[70%] lg:p-3">
+                <motion.div
+                    className="mt-3 w-full mx-auto lg:w-[70%] lg:p-3"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        ease: "linear",
+                        duration: 1,
+                        y: { duration: 2 },
+                    }}
+                >
                     {/* judul */}
                     <div className=" w-full md:w-[80%] mx-auto md:mb-10">
                         <h1 className="text-4xl md:text-6xl font-bold px-2 text-colorFont leading-10 md:leading-[4rem] ">
@@ -53,7 +74,7 @@ const Header: React.FC = () => {
                             <Link href="/about">What’s etech?</Link>
                         </Button>
                     </div>
-                </div>
+                </motion.div>
             </section>
             {/* ========= LINE =========== */}
             <div className="mt-4 w-full h-16 md:h-20 bg-BaseColor"></div>
@@ -88,7 +109,17 @@ const Header: React.FC = () => {
                         <span className="sr-only">Search</span>
                     </button>
                 </form> */}
-                <div className="flex flex-col lg:flex-row mt-10 item-center gap-5 ">
+                <motion.div
+                    className="flex flex-col lg:flex-row mt-10 item-center gap-5 "
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        ease: "linear",
+                        duration: 1,
+                        y: { duration: 2 },
+                    }}
+                >
                     {/* IMAGE HEADER 2  */}
                     <div className="flex flex-col items-center md:mb-5 lg:w-[55%]">
                         <img
@@ -129,7 +160,7 @@ const Header: React.FC = () => {
                             )}
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </section>
         </>
     );
