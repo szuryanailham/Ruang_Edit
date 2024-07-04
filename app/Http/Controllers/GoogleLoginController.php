@@ -19,7 +19,6 @@ class GoogleLoginController extends Controller
         try {
             $googleUser = Socialite::driver('google')->user();
             $user = User::where('google_id', $googleUser->getId())->first();
-            
             if (!$user) {
                 $newUser = User::create([
                     'name' => $googleUser->getName(),
