@@ -2,10 +2,21 @@ import React from "react";
 import { text_about } from "./Text";
 import { Link } from "@inertiajs/react";
 import { Button } from "@/Components/shadcn/ui/button";
+import { motion } from "framer-motion";
 const About: React.FC = () => {
     const paragraphs = text_about();
     return (
-        <div className=" mt-3 h-fit w-full p-5 lg:p-10 flex flex-col lg:flex-row items-center mx-auto">
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+                ease: "linear",
+                duration: 1,
+                y: { duration: 1 },
+            }}
+            className=" mt-3 h-fit w-full p-5 lg:p-10 flex flex-col lg:flex-row items-center mx-auto"
+        >
             {/* Image */}
             <div className="w-[85%] md:w-[75%] lg:w-[45%] bg-[url('/img/image_about.svg')] h-[221px] md:h-[350px] rounded-lg bg-cover bg-center"></div>
             {/* text */}
@@ -34,7 +45,7 @@ const About: React.FC = () => {
                     </Link>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

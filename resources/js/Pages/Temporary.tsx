@@ -11,7 +11,7 @@ const Temporary: React.FC = () => {
                 description="Halaman ini sedang dalam pengembangan. Kunjungi kembali nanti untuk menemukan konten baru dan menarik dari Ruang Edit. Kami sedang mempersiapkan sesuatu yang hebat untuk Anda!"
             />
             <NavBox />
-            <section className="bg-white dark:bg-gray-900 flex items-center justify-center min-h-screen">
+            <section className="bg-white dark:bg-gray-900 flex items-center justify-center min-h-screen mt-[10%]">
                 <div className="py-8 px-6 flex flex-col mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div className="mx-auto max-w-screen-sm text-center">
                         <img

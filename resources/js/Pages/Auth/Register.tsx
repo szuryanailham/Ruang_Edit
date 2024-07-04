@@ -8,7 +8,8 @@ import Meta from "@/Components/Meta";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: "",
+        nama_depan: "",
+        nama_belakang: "",
         email: "",
         password: "",
         password_confirmation: "",
@@ -34,7 +35,7 @@ export default function Register() {
             />
             <section>
                 <NavBox />
-                <div className=" w-full mt-2 h-fit flex flex-col lg:flex-row item-center p-4">
+                <div className="  mt-[20%] md:mt-[10%] w-full h-fit flex flex-col lg:flex-row item-center p-4">
                     {/* SIGN UP IMAGE */}
                     <div
                         style={{
@@ -57,28 +58,67 @@ export default function Register() {
                         </div>
                         <form className="space-y-4" onSubmit={submit}>
                             {/* NAME TITLE INPUT  */}
-                            <div>
-                                <InputLabel htmlFor="name" value="Name" />
+                            <div className="flex flex-row gap-5">
+                                <div className="w-1/2">
+                                    <InputLabel
+                                        htmlFor="name"
+                                        value="Nama depan"
+                                        className="mb-2"
+                                    />
+                                    <TextInput
+                                        id="name"
+                                        name="name"
+                                        value={data.nama_depan}
+                                        autoComplete="name"
+                                        isFocused={true}
+                                        onChange={(e) =>
+                                            setData(
+                                                "nama_depan",
+                                                e.target.value
+                                            )
+                                        }
+                                        required
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                        placeholder="nama depan ....."
+                                    />
 
-                                <TextInput
-                                    id="name"
-                                    name="name"
-                                    value={data.name}
-                                    autoComplete="name"
-                                    isFocused={true}
-                                    onChange={(e) =>
-                                        setData("name", e.target.value)
-                                    }
-                                    required
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    placeholder="your name ....."
-                                />
+                                    <InputError
+                                        message={errors.nama_depan}
+                                        className="mt-2"
+                                    />
+                                </div>
 
-                                <InputError
-                                    message={errors.name}
-                                    className="mt-2"
-                                />
+                                <div className="w-1/2">
+                                    <InputLabel
+                                        htmlFor="name"
+                                        value="Nama belakang"
+                                        className="mb-2"
+                                    />
+
+                                    <TextInput
+                                        id="name"
+                                        name="name"
+                                        value={data.nama_belakang}
+                                        autoComplete="name"
+                                        isFocused={true}
+                                        onChange={(e) =>
+                                            setData(
+                                                "nama_belakang",
+                                                e.target.value
+                                            )
+                                        }
+                                        required
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                        placeholder="nama belakang ....."
+                                    />
+
+                                    <InputError
+                                        message={errors.nama_belakang}
+                                        className="mt-2"
+                                    />
+                                </div>
                             </div>
+
                             {/* END NAME INPUT */}
 
                             {/* EMAIL SIGN INPUT */}
@@ -186,18 +226,6 @@ export default function Register() {
                             {/*LINE OR */}
                             {/* LOGIN WITH FOOGLE */}
 
-                            <button
-                                disabled
-                                type="submit"
-                                className="lg:w-1/2 flex items-center justify-center w-full text-white bg-BaseColor focus:ring-4 mx-auto focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                            >
-                                <img
-                                    src="/img/Google.svg"
-                                    alt="google icon"
-                                    className="mr-2"
-                                />
-                                <span>Login with Google</span>
-                            </button>
                             {/* LOGIN WITH GOOGLE */}
                         </form>
                         <div className="w-full flex justify-center">

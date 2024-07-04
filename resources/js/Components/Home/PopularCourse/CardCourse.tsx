@@ -24,19 +24,15 @@ const CardCourse: React.FC<CardCourseProps> = ({
 }) => {
     return (
         <Link href="/detailCourse">
-            <Card className="w-[280px] md:w-[245px] lg:w-[280px] mb-5">
+            <Card className="w-[280px] md:w-[245px] lg:w-[260px] mb-5">
                 <CardHeader
                     style={{ backgroundImage: `url('${image}')` }}
-                    className="w-full bg-no-repeat h-[150px] md:h-[170px] bg-cover rounded-t-lg"
+                    className="w-full bg-no-repeat h-[150px] md:h-[170px] bg-cover bg-center rounded-t-lg"
                 ></CardHeader>
                 <CardContent>
                     <div className="flex justify-between mt-3 md:mb-3">
                         <Badge className="bg-BaseColor font-bold md:px-3">
                             {category}
-                        </Badge>
-                        <Badge className="bg-BaseColor font-bold md:px-3">
-                            <FaStar />
-                            <span className="p-1">{rating}</span>
                         </Badge>
                     </div>
                     <div>
@@ -49,7 +45,7 @@ const CardCourse: React.FC<CardCourseProps> = ({
                         <div className="flex flex-row gap-2 items-center md:text-xl">
                             <FaBook />
                             <span className="text-sm md:text-md">
-                                {course}+course
+                                {course}+Lesson
                             </span>
                         </div>
                         {/* logo member */}

@@ -18,7 +18,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ user }) => {
                 description="Ruang Edit adalah platform pembelajaran editing online yang didedikasikan untuk membantu desainer grafis, fotografer, dan videografer meningkatkan keterampilan mereka. Pelajari lebih lanjut tentang misi kami, tim kami, dan bagaimana kami dapat membantu Anda menjadi ahli dalam bidang editing."
             />
             <NavBox />
-            <div className="mt-2 h-fit flex flex-col w-full item-center p-3">
+            <div className=" mt-[20%] md:mt-[10%] h-fit flex flex-col w-full item-center p-3">
                 {/* IMAGE PROFILE */}
                 <YouTubeEmbed videoId="65bXrcEoCiY" />
                 {/* END IMAGE PROFILE */}
